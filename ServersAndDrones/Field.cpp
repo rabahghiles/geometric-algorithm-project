@@ -329,13 +329,13 @@ void Field::delaunayTriangulation() {
 
         // if current is not Delaunay
         if (!current->isDelaunay) {
-            std::cout << "current: " << current->ptr[0]->x << "," << current->ptr[0]->y;
-            std::cout << " " << current->ptr[1]->x << "," << current->ptr[1]->y;
-            std::cout << " " << current->ptr[2]->x << "," << current->ptr[2]->y << std::endl;
+//            std::cout << "current: " << current->ptr[0]->x << "," << current->ptr[0]->y;
+//            std::cout << " " << current->ptr[1]->x << "," << current->ptr[1]->y;
+//            std::cout << " " << current->ptr[2]->x << "," << current->ptr[2]->y << std::endl;
             Triangle *Tneighbor = neighborInside(current);
-            std::cout << "neighbour found: " << Tneighbor->ptr[0]->x << "," << Tneighbor->ptr[0]->y;
-            std::cout << " " << Tneighbor->ptr[1]->x << "," << Tneighbor->ptr[1]->y;
-            std::cout << " " << Tneighbor->ptr[2]->x << "," << Tneighbor->ptr[2]->y << std::endl;
+//            std::cout << "neighbour found: " << Tneighbor->ptr[0]->x << "," << Tneighbor->ptr[0]->y;
+//            std::cout << " " << Tneighbor->ptr[1]->x << "," << Tneighbor->ptr[1]->y;
+//            std::cout << " " << Tneighbor->ptr[2]->x << "," << Tneighbor->ptr[2]->y << std::endl;
 
             // and if a neighbor is available
             if (Tneighbor!=nullptr) {
