@@ -177,6 +177,33 @@ FieldDraw.cpp.s:
 	$(MAKE) -f CMakeFiles/ServersAndDrones.dir/build.make CMakeFiles/ServersAndDrones.dir/FieldDraw.cpp.s
 .PHONY : FieldDraw.cpp.s
 
+Polygon.o: Polygon.cpp.o
+
+.PHONY : Polygon.o
+
+# target to build an object file
+Polygon.cpp.o:
+	$(MAKE) -f CMakeFiles/ServersAndDrones.dir/build.make CMakeFiles/ServersAndDrones.dir/Polygon.cpp.o
+.PHONY : Polygon.cpp.o
+
+Polygon.i: Polygon.cpp.i
+
+.PHONY : Polygon.i
+
+# target to preprocess a source file
+Polygon.cpp.i:
+	$(MAKE) -f CMakeFiles/ServersAndDrones.dir/build.make CMakeFiles/ServersAndDrones.dir/Polygon.cpp.i
+.PHONY : Polygon.cpp.i
+
+Polygon.s: Polygon.cpp.s
+
+.PHONY : Polygon.s
+
+# target to generate assembly for a file
+Polygon.cpp.s:
+	$(MAKE) -f CMakeFiles/ServersAndDrones.dir/build.make CMakeFiles/ServersAndDrones.dir/Polygon.cpp.s
+.PHONY : Polygon.cpp.s
+
 Server.o: Server.cpp.o
 
 .PHONY : Server.o
@@ -327,6 +354,9 @@ help:
 	@echo "... FieldDraw.o"
 	@echo "... FieldDraw.i"
 	@echo "... FieldDraw.s"
+	@echo "... Polygon.o"
+	@echo "... Polygon.i"
+	@echo "... Polygon.s"
 	@echo "... Server.o"
 	@echo "... Server.i"
 	@echo "... Server.s"

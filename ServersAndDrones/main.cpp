@@ -3,7 +3,7 @@
 #include "FieldDraw.h"
 
 int main(int argc, char **argv) {
-    FieldDraw fd{"Servers And Drones World", argc, argv, 1000, 800};
+    FieldDraw fd{"Servers And Drones World", argc, argv, 1000, 1000};
     fd.start();
 
     return 0;

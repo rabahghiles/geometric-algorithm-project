@@ -5,6 +5,14 @@
 #include "Triangle.h"
 #include <glutWindow.h>
 
+Triangle::Triangle() {
+    Vector2D* sentinel = new Vector2D(-1,-1);
+    ptr[0] = sentinel;
+    ptr[1] = sentinel;
+    ptr[2] = sentinel;
+    isHighlighted = false;
+    calculateCircle();
+}
 
 Triangle::Triangle(Vector2D* ptr1, Vector2D* ptr2, Vector2D* ptr3) {
     ptr[0] = ptr1;
@@ -50,11 +58,29 @@ void Triangle::updateVertices(Vector2D *ptr1,Vector2D *ptr2,Vector2D *ptr3) {
 bool Triangle::operator==(const Triangle &t) const {
     bool equal = true;
     for(int i=0; i<3; i++) {
-        if(t.ptr[i] != ptr[0] && t.ptr[i] != ptr[1] && t.ptr[i] != ptr[2]) {
+        if ((t.ptr[i]->x == ptr[0]->x && t.ptr[i]->y == ptr[0]->y) ||
+            (t.ptr[i]->x == ptr[1]->x && t.ptr[i]->y == ptr[1]->y) ||
+            (t.ptr[i]->x == ptr[2]->x && t.ptr[i]->y == ptr[2]->y)) {
+            // do nothing
+        } else {
             equal = false;
         }
     }
     return equal;
+}
+
+bool Triangle::operator!=(const Triangle &t) const {
+    bool equal = true;
+    for(int i=0; i<3; i++) {
+        if ((t.ptr[i]->x == ptr[0]->x && t.ptr[i]->y == ptr[0]->y) ||
+            (t.ptr[i]->x == ptr[1]->x && t.ptr[i]->y == ptr[1]->y) ||
+            (t.ptr[i]->x == ptr[2]->x && t.ptr[i]->y == ptr[2]->y)) {
+            // do nothing
+        } else {
+            equal = false;
+        }
+    }
+    return !equal;
 }
 
 Vector2D* Triangle::getVertexNotIn(Triangle triangle) {
@@ -80,6 +106,19 @@ Vector2D* Triangle::getNextVertex(Vector2D *vector) {
         if(a) {
             i++;
             return (ptr[i%3]);
+        }
+    }
+}
+
+Vector2D *Triangle::getPrevVertex(Vector2D *vector) {
+    for(int i=0; i<3; i++) {
+        bool a = ptr[i]->x == vector->x && ptr[i]->y == vector->y;
+        if(a) {
+            i--;
+            if(i==-1)
+                return (ptr[2]);
+            else
+                return (ptr[i]);
         }
     }
 }
@@ -163,4 +202,43 @@ void Triangle::drawCircle() {
         glLineWidth(1);
         glPopMatrix();
     }
+}
+
+bool Triangle::hasAsVertex(Vector2D *vector) {
+    for(int i=0; i<3; i++) {
+        if(ptr[i]->x == vector->x && ptr[i]->y == vector->y)
+            return true;
+    }
+    return false;
+}
+
+Triangle Triangle::getRightNeighbour(std::list<Triangle> triSubset) {
+    for(auto triangle: triSubset){
+        if(*this != triangle) {
+            Vector2D *a = triangle.ptr[0];
+            Vector2D *b = triangle.ptr[1];
+            Vector2D *c = triangle.ptr[2];
+
+            bool a_foundMatch = false, b_foundMatch = false, c_foundMatch = false;
+
+            for (int i = 0; i < 3; i++) {
+                if (!a_foundMatch && a->x == ptr[i]->x && a->y == ptr[i]->y)
+                    a_foundMatch = true;
+                if (!b_foundMatch && b->x == ptr[i]->x && b->y == ptr[i]->y)
+                    b_foundMatch = true;
+                if (!c_foundMatch && c->x == ptr[i]->x && c->y == ptr[i]->y)
+                    c_foundMatch = true;
+            }
+
+            if( (a_foundMatch && b_foundMatch) ||
+                (a_foundMatch && c_foundMatch) ||
+                (b_foundMatch && c_foundMatch) ) {
+
+                return triangle;
+            }
+        }
+    }
+    return Triangle();
+//    Vector2D* sentinel = new Vector2D(-1,-1);
+//    return Triangle(sentinel,sentinel,sentinel);
 }

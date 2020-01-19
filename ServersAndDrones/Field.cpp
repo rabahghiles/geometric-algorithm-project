@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <algorithm>
 
 #include <glutWindow.h>
 #include "Field.h"
@@ -92,6 +93,17 @@ void Field::draw() {
         triangle.drawCircle();
     }
 //    drawTriangulation();
+
+//    for(auto& polygon: tabPolygons) {
+//        polygon->draw();
+//    }
+
+    if (tabPolygons.size() > 4) {
+        tabPolygons[0]->draw();
+//        tabPolygons[1]->draw();
+q//        tabPolygons[3]->draw();
+//        tabPolygons[4]->draw();
+    }
 }
 
 void Field::convexHull() {
@@ -412,6 +424,147 @@ void Field::checkDelaunay() {
     while (t != tabTriangles.end()) {
         t->checkDelaunay(allPoints);
         t++;
+    }
+}
+
+Vector2D intersectionWithBorders(Vector2D a, Vector2D u, float x0, float y0, float x1, float y1) {
+    float k0, k1, k2, k3;
+    k0 = (x0 - a.x) / u.x;
+    k1 = (x1 - a.x) / u.x;
+    k2 = (y0 - a.y) / u.y;
+    k3 = (y1 - a.y) / u.y;
+
+    std::cout << k0 << "," << k1 << "," << k2 << "," << k3 << std::endl;
+
+    float foo[] = {k0,k1,k2,k3};
+    std::vector<float> bar;
+
+    for(auto k: foo){
+        if(k > 0.0)
+            bar.push_back(k);
+    }
+
+    float min_k = *min_element(bar.begin(), bar.end());
+    std::cout << min_k << std::endl;
+
+    Vector2D P = a + (min_k * u);
+
+    if(P.x < 0)
+        P.x = abs(P.x);
+    if(P.y < 0)
+        P.y = abs(P.y);
+
+    return P;
+}
+
+void Field::voronoiDiagram() {
+    Polygon* Pi;
+    for (auto vertex: allPoints) {
+        Pi = new Polygon(20);
+
+        std::list<Triangle> triangleSubset;
+
+        for (auto triangle: tabTriangles) {
+            if (triangle.hasAsVertex(vertex)) {
+                triangleSubset.push_back(triangle);
+            }
+        }
+
+        std::list<Triangle> leftTriangles;
+        std::list<Vector2D> edges;
+        bool isShared;
+        bool isShared2;
+        bool isOpened = false;
+
+        for (auto triangle: triangleSubset) {
+            isShared = false;
+            Vector2D *nextVertex = triangle.getNextVertex(vertex);
+
+            for (auto tri: triangleSubset) {
+                if (tri == triangle)
+                    continue;
+
+                if (tri.hasAsVertex(nextVertex)) {
+                    isShared = true;
+                    break;
+                }
+            }
+
+            if (isShared == false) {
+                leftTriangles.push_back(triangle);
+                Vector2D E = *nextVertex - *vertex;
+                edges.push_back(E);
+                isOpened = true;
+            }
+        }
+
+        for (auto triangle: triangleSubset) {
+            isShared2 = false;
+            Vector2D *prevVertex = triangle.getPrevVertex(vertex);
+
+            for (auto tri: triangleSubset) {
+                if (tri == triangle)
+                    continue;
+
+                if (tri.hasAsVertex(prevVertex)) {
+                    isShared2 = true;
+                    break;
+                }
+            }
+
+            if (isShared2 == false) {
+                leftTriangles.push_back(triangle);
+                Vector2D E = *vertex - *prevVertex;
+                edges.push_back(E);
+            }
+        }
+
+//        std::cout << leftTriangles.size() << std::endl;
+        std::cout << edges.size() << std::endl;
+
+        Triangle t;
+
+        if (isOpened) {
+            t = leftTriangles.front();
+            Vector2D E = edges.front();
+            std::cout << E.x << "," << E.y << std::endl;
+            Vector2D H = 0.5f * E;
+            std::cout << H.x << "," << H.y << std::endl;
+            Vector2D u = E.rightOrtho();
+            std::cout << "u: " << u.x << "," << u.y << std::endl;
+            Vector2D Q = intersectionWithBorders(H, u, 0, 0, 1000, 1000);
+            std::cout << Q.x << "," << Q.y << std::endl;
+            Pi->addVector(Q);
+        } else {
+            t = triangleSubset.front();
+        }
+
+        Triangle tPrev;
+        while (triangleSubset.size() > 1) {
+            Pi->addVector(t.circumCenter);
+            tPrev = t;
+            t = t.getRightNeighbour(triangleSubset);
+            triangleSubset.remove(tPrev);
+        }
+
+        Pi->addVector(t.circumCenter);
+
+        if (isOpened) {
+            Vector2D E = edges.back();
+            Vector2D H = 0.5f * E;
+            Vector2D u = E.rightOrtho();
+            Vector2D Q = intersectionWithBorders(H, u, 0, 0, 1000, 1000);
+            std::cout << Q.x << "," << Q.y << std::endl;
+            Pi->addVector(Q);
+        }
+
+        triangleSubset.remove(t);
+        // add corner points
+        tabPolygons.push_back(Pi);
+    }
+
+    for(auto p: tabPolygons) {
+        std::cout << p->N << std::endl;
     }
 }
 

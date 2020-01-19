@@ -94,6 +94,12 @@
 		<Unit filename="/Users/kwabena/CLionProjects/ServersAndDrones/FieldDraw.h">
 			<Option target="ServersAndDrones"/>
 		</Unit>
+		<Unit filename="/Users/kwabena/CLionProjects/ServersAndDrones/Polygon.cpp">
+			<Option target="ServersAndDrones"/>
+		</Unit>
+		<Unit filename="/Users/kwabena/CLionProjects/ServersAndDrones/Polygon.h">
+			<Option target="ServersAndDrones"/>
+		</Unit>
 		<Unit filename="/Users/kwabena/CLionProjects/ServersAndDrones/Server.cpp">
 			<Option target="ServersAndDrones"/>
 		</Unit>

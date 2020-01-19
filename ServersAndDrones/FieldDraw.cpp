@@ -5,7 +5,7 @@
 #include "FieldDraw.h"
 
 
-FieldDraw::FieldDraw(const string &title, int argc, char **argv, unsigned int width = 800, unsigned int height = 800)
+FieldDraw::FieldDraw(const string &title, int argc, char **argv, unsigned int width = 1000, unsigned int height = 1000)
         : GlutWindow(argc, argv, title, width, height, FIXED){
 
 }
@@ -38,6 +38,9 @@ void FieldDraw::onKeyPressed(unsigned char c, double x, double y) {
         case 's':
             field->delaunayTriangulation();
             field->checkDelaunay();
+            break;
+        case 'v':
+            field->voronoiDiagram();
     }
 }
 

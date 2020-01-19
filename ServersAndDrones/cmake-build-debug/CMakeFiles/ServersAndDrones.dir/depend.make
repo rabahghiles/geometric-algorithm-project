@@ -4,6 +4,7 @@
 CMakeFiles/ServersAndDrones.dir/Field.cpp.o: ../../glutInterface/glutWindow.h
 CMakeFiles/ServersAndDrones.dir/Field.cpp.o: ../Field.cpp
 CMakeFiles/ServersAndDrones.dir/Field.cpp.o: ../Field.h
+CMakeFiles/ServersAndDrones.dir/Field.cpp.o: ../Polygon.h
 CMakeFiles/ServersAndDrones.dir/Field.cpp.o: ../Server.h
 CMakeFiles/ServersAndDrones.dir/Field.cpp.o: ../Triangle.h
 CMakeFiles/ServersAndDrones.dir/Field.cpp.o: ../Vector2D.h
@@ -13,10 +14,19 @@ CMakeFiles/ServersAndDrones.dir/FieldDraw.cpp.o: ../../glutInterface/glutWindow.
 CMakeFiles/ServersAndDrones.dir/FieldDraw.cpp.o: ../Field.h
 CMakeFiles/ServersAndDrones.dir/FieldDraw.cpp.o: ../FieldDraw.cpp
 CMakeFiles/ServersAndDrones.dir/FieldDraw.cpp.o: ../FieldDraw.h
+CMakeFiles/ServersAndDrones.dir/FieldDraw.cpp.o: ../Polygon.h
 CMakeFiles/ServersAndDrones.dir/FieldDraw.cpp.o: ../Server.h
 CMakeFiles/ServersAndDrones.dir/FieldDraw.cpp.o: ../Triangle.h
 CMakeFiles/ServersAndDrones.dir/FieldDraw.cpp.o: ../Vector2D.h
 CMakeFiles/ServersAndDrones.dir/FieldDraw.cpp.o: ../determinant.h
+
+CMakeFiles/ServersAndDrones.dir/Polygon.cpp.o: ../../glutInterface/glutWindow.h
+CMakeFiles/ServersAndDrones.dir/Polygon.cpp.o: ../Polygon.cpp
+CMakeFiles/ServersAndDrones.dir/Polygon.cpp.o: ../Polygon.h
+CMakeFiles/ServersAndDrones.dir/Polygon.cpp.o: ../Server.h
+CMakeFiles/ServersAndDrones.dir/Polygon.cpp.o: ../Triangle.h
+CMakeFiles/ServersAndDrones.dir/Polygon.cpp.o: ../Vector2D.h
+CMakeFiles/ServersAndDrones.dir/Polygon.cpp.o: ../determinant.h
 
 CMakeFiles/ServersAndDrones.dir/Server.cpp.o: ../Server.cpp
 CMakeFiles/ServersAndDrones.dir/Server.cpp.o: ../Server.h
@@ -38,6 +48,7 @@ CMakeFiles/ServersAndDrones.dir/determinant.cpp.o: ../determinant.h
 CMakeFiles/ServersAndDrones.dir/main.cpp.o: ../../glutInterface/glutWindow.h
 CMakeFiles/ServersAndDrones.dir/main.cpp.o: ../Field.h
 CMakeFiles/ServersAndDrones.dir/main.cpp.o: ../FieldDraw.h
+CMakeFiles/ServersAndDrones.dir/main.cpp.o: ../Polygon.h
 CMakeFiles/ServersAndDrones.dir/main.cpp.o: ../Server.h
 CMakeFiles/ServersAndDrones.dir/main.cpp.o: ../Triangle.h
 CMakeFiles/ServersAndDrones.dir/main.cpp.o: ../Vector2D.h

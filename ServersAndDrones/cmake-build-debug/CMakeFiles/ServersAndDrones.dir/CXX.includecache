@@ -27,6 +27,8 @@ fstream
 -
 sstream
 -
+algorithm
+-
 glutWindow.h
 -
 Field.h
@@ -37,10 +39,20 @@ Server.h
 /Users/kwabena/CLionProjects/ServersAndDrones/Server.h
 Triangle.h
 /Users/kwabena/CLionProjects/ServersAndDrones/Triangle.h
+Polygon.h
+/Users/kwabena/CLionProjects/ServersAndDrones/Polygon.h
 list
 -
 vector
 -
+
+/Users/kwabena/CLionProjects/ServersAndDrones/Polygon.h
+glutWindow.h
+-
+Vector2D.h
+/Users/kwabena/CLionProjects/ServersAndDrones/Vector2D.h
+Triangle.h
+/Users/kwabena/CLionProjects/ServersAndDrones/Triangle.h
 
 /Users/kwabena/CLionProjects/ServersAndDrones/Server.h
 iostream
@@ -58,6 +70,8 @@ Vector2D.h
 determinant.h
 /Users/kwabena/CLionProjects/ServersAndDrones/determinant.h
 vector
+-
+list
 -
 Server.h
 /Users/kwabena/CLionProjects/ServersAndDrones/Server.h

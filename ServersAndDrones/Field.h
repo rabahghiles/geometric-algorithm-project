@@ -8,6 +8,7 @@
 
 #include "Server.h"
 #include "Triangle.h"
+#include "Polygon.h"
 
 #include <list>
 #include <vector>
@@ -22,6 +23,8 @@ class Field {
     Vector2D *tabPts;
     std::vector<Vector2D*> allPoints;
     std::vector<Vector2D*> interiorPoints;
+
+    std::vector<Polygon*> tabPolygons;
 
 
 public:
@@ -39,6 +42,7 @@ public:
     void seeInteriorPoints();
     void addInteriorPoints();
     void delaunayTriangulation();
+    void voronoiDiagram();
 
 
     static bool polarComparison(Vector2D P1, Vector2D P2);
