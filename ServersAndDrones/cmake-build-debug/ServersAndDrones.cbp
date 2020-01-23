@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/kwabena/CLionProjects/ServersAndDrones/Drone.cpp">
+			<Option target="ServersAndDrones"/>
+		</Unit>
+		<Unit filename="/Users/kwabena/CLionProjects/ServersAndDrones/Drone.h">
+			<Option target="ServersAndDrones"/>
+		</Unit>
 		<Unit filename="/Users/kwabena/CLionProjects/ServersAndDrones/Field.cpp">
 			<Option target="ServersAndDrones"/>
 		</Unit>

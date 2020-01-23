@@ -123,6 +123,33 @@ ServersAndDrones/fast:
 	$(MAKE) -f CMakeFiles/ServersAndDrones.dir/build.make CMakeFiles/ServersAndDrones.dir/build
 .PHONY : ServersAndDrones/fast
 
+Drone.o: Drone.cpp.o
+
+.PHONY : Drone.o
+
+# target to build an object file
+Drone.cpp.o:
+	$(MAKE) -f CMakeFiles/ServersAndDrones.dir/build.make CMakeFiles/ServersAndDrones.dir/Drone.cpp.o
+.PHONY : Drone.cpp.o
+
+Drone.i: Drone.cpp.i
+
+.PHONY : Drone.i
+
+# target to preprocess a source file
+Drone.cpp.i:
+	$(MAKE) -f CMakeFiles/ServersAndDrones.dir/build.make CMakeFiles/ServersAndDrones.dir/Drone.cpp.i
+.PHONY : Drone.cpp.i
+
+Drone.s: Drone.cpp.s
+
+.PHONY : Drone.s
+
+# target to generate assembly for a file
+Drone.cpp.s:
+	$(MAKE) -f CMakeFiles/ServersAndDrones.dir/build.make CMakeFiles/ServersAndDrones.dir/Drone.cpp.s
+.PHONY : Drone.cpp.s
+
 Field.o: Field.cpp.o
 
 .PHONY : Field.o
@@ -348,6 +375,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... ServersAndDrones"
+	@echo "... Drone.o"
+	@echo "... Drone.i"
+	@echo "... Drone.s"
 	@echo "... Field.o"
 	@echo "... Field.i"
 	@echo "... Field.s"

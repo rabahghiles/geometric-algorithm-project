@@ -7,7 +7,7 @@
 
 FieldDraw::FieldDraw(const string &title, int argc, char **argv, unsigned int width = 1000, unsigned int height = 1000)
         : GlutWindow(argc, argv, title, width, height, FIXED){
-
+    droneId=0;
 }
 
 void FieldDraw::onStart() {
@@ -22,7 +22,8 @@ void FieldDraw::onStart() {
     field->addInteriorPoints();
     field->checkDelaunay();
     glClearColor(1.0, 1.0, 1.0, 1.0);
-
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 }
 
 void FieldDraw::onDraw() {
@@ -30,7 +31,7 @@ void FieldDraw::onDraw() {
 }
 
 void FieldDraw::onQuit() {
-
+    glDeleteTextures(1,&droneId);
 }
 
 void FieldDraw::onKeyPressed(unsigned char c, double x, double y) {
@@ -41,6 +42,10 @@ void FieldDraw::onKeyPressed(unsigned char c, double x, double y) {
             break;
         case 'v':
             field->voronoiDiagram();
+            break;
+        case 'd':
+            field->addDrone();
+            break;
     }
 }
 

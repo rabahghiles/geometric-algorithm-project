@@ -9,6 +9,7 @@
 #include "Server.h"
 #include "Triangle.h"
 #include "Polygon.h"
+#include "Drone.h"
 
 #include <list>
 #include <vector>
@@ -26,6 +27,7 @@ class Field {
 
     std::vector<Polygon*> tabPolygons;
 
+    std::vector<Drone*> drones;
 
 public:
     std::list<Triangle> tabTriangles;
@@ -43,7 +45,7 @@ public:
     void addInteriorPoints();
     void delaunayTriangulation();
     void voronoiDiagram();
-
+    void addDrone();
 
     static bool polarComparison(Vector2D P1, Vector2D P2);
     bool isOnTheLeft(const Vector2D* p, const Vector2D* p1, const Vector2D* p2);

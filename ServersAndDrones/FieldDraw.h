@@ -14,6 +14,7 @@ class FieldDraw: public GlutWindow {
 private:
     std::string filename;
     Field *field;
+    GLuint droneId;
 public:
     FieldDraw(const string& title, int argc, char **argv, unsigned int width, unsigned int height);
 

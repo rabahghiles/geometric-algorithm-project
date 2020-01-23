@@ -5,6 +5,7 @@
 #include <fstream>
 #include <sstream>
 #include <algorithm>
+#include <limits>
 
 #include <glutWindow.h>
 #include "Field.h"
@@ -98,11 +99,17 @@ void Field::draw() {
 //        polygon->draw();
 //    }
 
-    if (tabPolygons.size() > 4) {
+    if (tabPolygons.size() > 5) {
         tabPolygons[0]->draw();
-//        tabPolygons[1]->draw();
-q//        tabPolygons[3]->draw();
-//        tabPolygons[4]->draw();
+        tabPolygons[1]->draw();
+        tabPolygons[2]->draw();
+        tabPolygons[3]->draw();
+        tabPolygons[4]->draw();
+        tabPolygons[5]->draw();
+    }
+
+    for (auto& drone: drones) {
+        drone->draw();
     }
 }
 
@@ -434,35 +441,28 @@ Vector2D intersectionWithBorders(Vector2D a, Vector2D u, float x0, float y0, flo
     k2 = (y0 - a.y) / u.y;
     k3 = (y1 - a.y) / u.y;
 
-    std::cout << k0 << "," << k1 << "," << k2 << "," << k3 << std::endl;
+//    std::cout << k0 << "," << k1 << "," << k2 << "," << k3 << std::endl;
 
-    float foo[] = {k0,k1,k2,k3};
-    std::vector<float> bar;
+    std::vector<float> foo = {k0,k1,k2,k3};
+    float min = std::numeric_limits<float>::max();
+    Vector2D tryP;
+    Vector2D P;
 
-    for(auto k: foo){
-        if(k > 0.0)
-            bar.push_back(k);
+    for (auto k: foo) {
+        if(k > 0 && k < min)
+            min = k;
     }
-
-    float min_k = *min_element(bar.begin(), bar.end());
-    std::cout << min_k << std::endl;
-
-    Vector2D P = a + (min_k * u);
-
-    if(P.x < 0)
-        P.x = abs(P.x);
-    if(P.y < 0)
-        P.y = abs(P.y);
-
+    P = a + (min * u);
     return P;
 }
 
 void Field::voronoiDiagram() {
     Polygon* Pi;
+    std::list<Triangle> triangleSubset;
+
     for (auto vertex: allPoints) {
         Pi = new Polygon(20);
 
-        std::list<Triangle> triangleSubset;
 
         for (auto triangle: tabTriangles) {
             if (triangle.hasAsVertex(vertex)) {
@@ -475,6 +475,7 @@ void Field::voronoiDiagram() {
         bool isShared;
         bool isShared2;
         bool isOpened = false;
+        Vector2D Q1,Q2;
 
         for (auto triangle: triangleSubset) {
             isShared = false;
@@ -492,7 +493,10 @@ void Field::voronoiDiagram() {
 
             if (isShared == false) {
                 leftTriangles.push_back(triangle);
-                Vector2D E = *nextVertex - *vertex;
+                Vector2D E = *nextVertex;
+//                std::cout << "v: " << vertex->x << "," << vertex->y << std::endl;
+//                std::cout << "nv: " << nextVertex->x << "," << nextVertex->y << std::endl;
+//                std::cout << "edge: " << E.x << "," << E.y << std::endl;
                 edges.push_back(E);
                 isOpened = true;
             }
@@ -514,8 +518,12 @@ void Field::voronoiDiagram() {
 
             if (isShared2 == false) {
                 leftTriangles.push_back(triangle);
-                Vector2D E = *vertex - *prevVertex;
+                Vector2D E = *prevVertex;
+//                std::cout << "v: " << vertex->x << "," << vertex->y << std::endl;
+//                std::cout << "pv: " << prevVertex->x << "," << prevVertex->y << std::endl;
+//                std::cout << "edge: " << E.x << "," << E.y << std::endl;
                 edges.push_back(E);
+                isOpened = true;
             }
         }
 
@@ -527,14 +535,14 @@ void Field::voronoiDiagram() {
         if (isOpened) {
             t = leftTriangles.front();
             Vector2D E = edges.front();
-            std::cout << E.x << "," << E.y << std::endl;
-            Vector2D H = 0.5f * E;
-            std::cout << H.x << "," << H.y << std::endl;
-            Vector2D u = E.rightOrtho();
-            std::cout << "u: " << u.x << "," << u.y << std::endl;
-            Vector2D Q = intersectionWithBorders(H, u, 0, 0, 1000, 1000);
-            std::cout << Q.x << "," << Q.y << std::endl;
-            Pi->addVector(Q);
+//            std::cout << "E1: " << E.x << "," << E.y << std::endl;
+            Vector2D H = 0.5f * (*vertex + E);
+//            std::cout << "H1: " << H.x << "," << H.y << std::endl;
+            Vector2D u = (E - *vertex).rightOrtho();
+//            std::cout << "u1: " << u.x << "," << u.y << std::endl;
+            Q1 = intersectionWithBorders(H, u, 0, 0, 1000, 1000);
+            std::cout << "Q1: " << Q1.x << "," << Q1.y << std::endl;
+            Pi->addVector(Q1);
         } else {
             t = triangleSubset.front();
         }
@@ -551,21 +559,46 @@ void Field::voronoiDiagram() {
 
         if (isOpened) {
             Vector2D E = edges.back();
-            Vector2D H = 0.5f * E;
-            Vector2D u = E.rightOrtho();
-            Vector2D Q = intersectionWithBorders(H, u, 0, 0, 1000, 1000);
-            std::cout << Q.x << "," << Q.y << std::endl;
-            Pi->addVector(Q);
+//            std::cout << "E2: " << E.x << "," << E.y << std::endl;
+            Vector2D H = 0.5f * (E + *vertex);
+//            std::cout << "H2: " << H.x << "," << H.y << std::endl;
+            Vector2D u = (*vertex - E).rightOrtho();
+//            std::cout << "u2: " << u.x << "," << u.y << std::endl;
+            Q2 = intersectionWithBorders(H, u, 0, 0, 1000, 1000);
+            std::cout << "Q2: " << Q2.x << "," << Q2.y << std::endl;
+            Pi->addVector(Q2);
         }
 
         triangleSubset.remove(t);
-        // add corner points
+
+        if(isOpened){
+            if ((Q1.x == 0 && Q2.y == 0) ||
+                (Q2.x == 0 && Q1.y == 0))
+                Pi->addVector(Vector2D(0,0));
+
+            else if ((Q1.x == 1000 && Q2.y == 0) ||
+                     (Q2.x == 1000 && Q1.y == 0))
+                Pi->addVector(Vector2D(1000,0));
+
+            else if ((Q1.x == 0 && Q2.y == 1000) ||
+                     (Q2.x == 0 && Q1.y == 1000))
+                    Pi->addVector(Vector2D(0,1000));
+
+            else if ((Q1.x == 1000 && Q2.y == 1000) ||
+                     (Q2.x == 1000 && Q1.y == 1000))
+                Pi->addVector(Vector2D(1000,1000));
+        }
+
         tabPolygons.push_back(Pi);
     }
 
     for(auto p: tabPolygons) {
         std::cout << p->N << std::endl;
     }
+}
+
+void Field::addDrone() {
+    drones.push_back(new Drone());
 }
 
 
