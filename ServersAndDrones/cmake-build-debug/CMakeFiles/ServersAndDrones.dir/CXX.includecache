@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-../../glutInterface/glutWindow.h
+../../../glutInterface/glutWindow.h
 iostream
 -
 string
@@ -20,41 +20,23 @@ GL/freeglut.h
 GLUT/glut.h
 -
 
-/Users/kwabena/CLionProjects/ServersAndDrones/Field.cpp
+/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Drone.cpp
+Drone.h
+/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Drone.h
+Server.h
+/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Server.h
+
+/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Drone.h
 iostream
 -
-fstream
--
-sstream
--
-algorithm
+string
 -
 glutWindow.h
 -
-Field.h
-/Users/kwabena/CLionProjects/ServersAndDrones/Field.h
-
-/Users/kwabena/CLionProjects/ServersAndDrones/Field.h
 Server.h
-/Users/kwabena/CLionProjects/ServersAndDrones/Server.h
-Triangle.h
-/Users/kwabena/CLionProjects/ServersAndDrones/Triangle.h
-Polygon.h
-/Users/kwabena/CLionProjects/ServersAndDrones/Polygon.h
-list
--
-vector
--
+/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Server.h
 
-/Users/kwabena/CLionProjects/ServersAndDrones/Polygon.h
-glutWindow.h
--
-Vector2D.h
-/Users/kwabena/CLionProjects/ServersAndDrones/Vector2D.h
-Triangle.h
-/Users/kwabena/CLionProjects/ServersAndDrones/Triangle.h
-
-/Users/kwabena/CLionProjects/ServersAndDrones/Server.h
+/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Server.h
 iostream
 -
 string
@@ -62,23 +44,9 @@ string
 sstream
 -
 Vector2D.h
-/Users/kwabena/CLionProjects/ServersAndDrones/Vector2D.h
+/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Vector2D.h
 
-/Users/kwabena/CLionProjects/ServersAndDrones/Triangle.h
-Vector2D.h
-/Users/kwabena/CLionProjects/ServersAndDrones/Vector2D.h
-determinant.h
-/Users/kwabena/CLionProjects/ServersAndDrones/determinant.h
-vector
--
-list
--
-Server.h
-/Users/kwabena/CLionProjects/ServersAndDrones/Server.h
-
-/Users/kwabena/CLionProjects/ServersAndDrones/Vector2D.h
+/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Vector2D.h
 cmath
 -
-
-/Users/kwabena/CLionProjects/ServersAndDrones/determinant.h
 

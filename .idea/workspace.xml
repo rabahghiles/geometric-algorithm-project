@@ -2,8 +2,8 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="geometric-algorithm-project" targetName="geometric-algorithm-project" />
       <config projectName="geometric-algorithm-project" targetName="finalproject" />
+      <config projectName="geometric-algorithm-project" targetName="geometric-algorithm-project" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -13,32 +13,57 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c293176-b58c-430c-bf26-3cf74a2c9d74" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServersAndDrones/Drone.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServersAndDrones/Drone.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServersAndDrones/Images/drone100x100.tga" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/finalproject.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/CXX.includecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/Field.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/FieldDraw.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/Server.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/Triangle.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/Vector2D.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/depend.internal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/determinant.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/main.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/ServersAndDrones.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ServersAndDrones.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/Field.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/Field.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/FieldDraw.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/FieldDraw.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/FieldDraw.h" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/FieldDraw.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/Polygon.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/Polygon.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/3.15.3/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/3.15.3/CMakeCCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/3.15.3/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/3.15.3/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/3.15.3/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/3.15.3/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdCXX/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdCXX/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/Field.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/Field.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/FieldDraw.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/FieldDraw.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/Polygon.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/Polygon.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/Server.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/Server.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/Triangle.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/Triangle.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/Vector2D.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/Vector2D.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/determinant.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/determinant.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/ServersAndDrones" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/ServersAndDrones" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/ServersAndDrones.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/ServersAndDrones.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServersAndDrones/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ServersAndDrones/main.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,8 +74,12 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="kwabena" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1V4DxVeBgjUcNhJL2mf3c68Fh5V" />
@@ -62,6 +91,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ServersAndDrones" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -104,6 +134,7 @@
       <workItem from="1576503720892" duration="435000" />
       <workItem from="1578785465346" duration="52000" />
       <workItem from="1578785559535" duration="227000" />
+      <workItem from="1579552546198" duration="626000" />
     </task>
     <servers />
   </component>
@@ -124,21 +155,13 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1576508157093">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576508157093" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1576508157093">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1576508157093" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1576508157093">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1576508157093" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1576508157093">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1576508157093" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" />
   </component>
 </project>

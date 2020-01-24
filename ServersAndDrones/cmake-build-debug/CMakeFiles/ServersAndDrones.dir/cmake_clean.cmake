@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/ServersAndDrones.dir/Drone.cpp.o"
   "CMakeFiles/ServersAndDrones.dir/Field.cpp.o"
   "CMakeFiles/ServersAndDrones.dir/FieldDraw.cpp.o"
   "CMakeFiles/ServersAndDrones.dir/Polygon.cpp.o"

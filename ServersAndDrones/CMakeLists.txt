@@ -9,7 +9,7 @@ cmake_minimum_required(VERSION 3.12)
 
 set(PROJECT_NAME ServersAndDrones)
 set(PROJECT_FILES main.cpp Field.cpp Field.h Server.cpp Server.h Vector2D.cpp
-        Vector2D.h FieldDraw.cpp FieldDraw.h Triangle.cpp Triangle.h determinant.cpp determinant.h Polygon.cpp Polygon.h)
+        Vector2D.h FieldDraw.cpp FieldDraw.h Triangle.cpp Triangle.h determinant.cpp determinant.h Polygon.cpp Polygon.h Drone.cpp Drone.h)
 
 project(${PROJECT_NAME})
 
@@ -45,8 +45,8 @@ IF(LINUX)
 
     SET(GLUT_INCLUDE_DIR /usr/include)
     SET(GLUT_glut_LIBRARY /usr/lib/x86_64-linux-gnu/libglut.so)
-    set(GLUT_INTERFACE_DIRS  ../glutInterface)
-    set(GLUT_INTERFACE_LIB_DIRS  ../glutInterface/cmake-build-debug)
+    set(GLUT_INTERFACE_DIRS  ../../glutInterface)
+    set(GLUT_INTERFACE_LIB_DIRS  ../../glutInterface/cmake-build-debug)
 
     find_package(GLUT REQUIRED)
     link_directories(${GLUT_LIBRARY_DIRS})

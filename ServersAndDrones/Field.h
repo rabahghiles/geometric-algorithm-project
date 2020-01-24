@@ -7,6 +7,7 @@
 
 
 #include "Server.h"
+#include "Drone.h"
 #include "Triangle.h"
 #include "Polygon.h"
 
@@ -17,14 +18,15 @@ class Field {
     std::string file;
     int numServers;
     std::vector<Server> servers;
+    std::vector<Drone> drones;
 
     int N;
     int Nmax;
     Vector2D *tabPts;
     std::vector<Vector2D*> allPoints;
     std::vector<Vector2D*> interiorPoints;
-
     std::vector<Polygon*> tabPolygons;
+    GLuint serverId;
 
 
 public:
@@ -32,6 +34,7 @@ public:
     Field(std::string filename = "servers.txt");
 
     void addServers();
+    void addDrone();
     void seeServers();
     void convexHull();
     void triangulation();

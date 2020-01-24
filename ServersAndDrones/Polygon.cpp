@@ -21,7 +21,7 @@ bool Polygon::addVector(const Vector2D &p) {
 }
 
 void Polygon::setColor(const float *t_color) {
-    memcpy(color, t_color, 4 * sizeof(float));
+    wmemcpy(reinterpret_cast<wchar_t *>(color), reinterpret_cast<const wchar_t *>(t_color), 4 * sizeof(float));
 }
 
 float Polygon::crossProduct(const Vector2D& u, const Vector2D& v) {
