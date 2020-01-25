@@ -58,11 +58,25 @@ void FieldDraw::onKeyPressed(unsigned char c, double x, double y) {
             field->voronoiDiagram();
         case 'd':
             field->addDrone();
+        case 'r':
+            for (auto drone:field->drones) {
+                srand(time(NULL));
+                int newServer = rand() % field->servers.size();
+                cout << newServer << endl;
+                drone.updateServer(&field->servers[newServer]);
+            }
+
+
     }
 }
 
 void FieldDraw::onMouseMove(double cx, double cy) {
     Vector2D vertex((float) cx, (float) cy);
+
+//    for (auto drone:field->drones) {
+//        drone.updateServer(new Server("", &vertex ,""));
+//    }
+
 //    for (auto t:tris) {
 //        t->onMouseMove(v);
 //    }

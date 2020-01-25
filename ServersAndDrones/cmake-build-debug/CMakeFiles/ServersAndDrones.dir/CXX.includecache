@@ -23,8 +23,6 @@ GLUT/glut.h
 /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Drone.cpp
 Drone.h
 /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Drone.h
-Server.h
-/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Server.h
 
 /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Drone.h
 iostream
@@ -32,6 +30,8 @@ iostream
 string
 -
 glutWindow.h
+-
+vector
 -
 Server.h
 /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Server.h

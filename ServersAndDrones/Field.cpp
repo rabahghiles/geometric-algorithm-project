@@ -48,6 +48,8 @@ void Field::addDrone() {
     srand (time(NULL));
     int newServer = rand() % servers.size();
     newDrone.updateServer(&servers[newServer]);
+    cout << newServer << endl;
+//    newDrone.setField(this);
     drones.push_back(newDrone);
 }
 
@@ -126,7 +128,7 @@ void Field::draw() {
     drawConvexHull();
 
     for (auto &drone: drones) {
-        drone.draw();
+        drone.draw(this->drones);
     }
 
     glColor3fv(BLACK);

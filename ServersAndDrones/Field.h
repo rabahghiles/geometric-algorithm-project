@@ -17,8 +17,6 @@
 class Field {
     std::string file;
     int numServers;
-    std::vector<Server> servers;
-    std::vector<Drone> drones;
 
     int N;
     int Nmax;
@@ -56,7 +54,9 @@ public:
     void checkDelaunay();
 
 
-    };
+    std::vector<Drone> drones;
+    std::vector<Server> servers;
+};
 
 
 #endif //SERVERSANDDRONES_FIELD_H

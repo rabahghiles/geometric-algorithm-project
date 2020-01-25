@@ -9,6 +9,7 @@
 #include <iostream>
 #include <string>
 #include <glutWindow.h>
+#include <vector>
 
 #include "Server.h"
 
@@ -25,11 +26,11 @@ public:
 
     Drone();
 
-    void draw();
+    void draw(vector<Drone> drones);
 
     void updateServer(Server *newServer);
 
-    void updateSpeed();
+    void updateSpeed(vector<Drone> drones);
 };
 
 
