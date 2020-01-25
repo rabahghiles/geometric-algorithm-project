@@ -20,7 +20,16 @@ private:
     Vector2D* speed;
     Vector2D* location;
     Vector2D* acceleration;
+    Vector2D* start;
     Server* server;
+    float weight;
+    float radius;
+    float maxSpeed;
+    double dmax;
+    double r;
+    float thrustForceStrength;
+    float collisionForceStrength;
+    float smoothDamping;
 
 public:
 
