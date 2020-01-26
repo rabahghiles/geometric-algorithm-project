@@ -18,15 +18,15 @@ Drone::Drone() {
     // average weight of a drone in kg
     weight = 0.8;
     // drone size radius
-    radius = 25;
+    radius = 20;
     //legal max speed of 100 mph
     maxSpeed = 44.704;
     // distance of collision activation
-    dmax = radius + 96;
+    dmax = 0 + 96;
     // distance of max collision force activation
     r = radius + 48;
     //the thrust force strength
-    thrustForceStrength =3;
+    thrustForceStrength = 0.5;
     //the collison max force
     collisionForceStrength = 1;
     // smooth damping
@@ -63,7 +63,7 @@ void Drone::draw(vector<Drone> drones) {
 
     glBindTexture(GL_TEXTURE_2D, droneId);
     glPushMatrix();
-    glTranslatef(location->x - 25, location->y-25, 1.0);
+    glTranslatef(location->x - radius, location->y - radius, 1.0);
     glBegin(GL_QUADS);
     glTexCoord2f(0.0, 0.0);
     glVertex2f(0.0, 0.0);
@@ -129,8 +129,11 @@ void Drone::draw(vector<Drone> drones) {
 
 
     glColor3fv(BLACK);
-    GlutWindow::drawText(location->x, location->y, "speed : " + to_string( roundf((float) speed->norm() * 100) / 100), GlutWindow::ALIGN_RIGHT, GLUT_BITMAP_8_BY_13);
-    GlutWindow::drawText(location->x, location->y - 20, "accel : " + to_string( roundf((float)acceleration->norm() * 100) / 100), GlutWindow::ALIGN_RIGHT, GLUT_BITMAP_8_BY_13);
+    GlutWindow::drawText(location->x, location->y, "speed : " + to_string(roundf((float) speed->norm() * 100) / 100),
+                         GlutWindow::ALIGN_RIGHT, GLUT_BITMAP_8_BY_13);
+    GlutWindow::drawText(location->x, location->y - 20,
+                         "accel : " + to_string(roundf((float) acceleration->norm() * 100) / 100),
+                         GlutWindow::ALIGN_RIGHT, GLUT_BITMAP_8_BY_13);
 
 
     /*
@@ -216,11 +219,19 @@ void Drone::updateSpeed(vector<Drone> drones) {
     // lift force is an altitude force too on x = 0 , y = 0 , z = -mg
     Vector2D liftForce = Vector2D();
     // thrust force in the direction of the target
-    Vector2D thrustForce = (*server->location - *this->location);
+    Vector2D distance = (*server->location - *this->location);
+    float thrustStrength;
+    if (distance.norm() < 10) {
+        thrustStrength = 0;
+    } else {
+        thrustStrength = thrustForceStrength;
+    }
+    // thrust force in the direction of the target
+    Vector2D thrustForce = Vector2D(distance);
     // normalize the direction vector to get 1 as norm
     thrustForce.normalize();
     // calculate the force vector
-    thrustForce = thrustForceStrength * thrustForce;
+    thrustForce = thrustStrength * thrustForce;
 
     // the result force
     Vector2D force = weightForce + liftForce + dragForce + thrustForce;
@@ -249,7 +260,8 @@ void Drone::updateSpeed(vector<Drone> drones) {
     acceleration->x = tmpAcc.x;
     acceleration->y = tmpAcc.y;
 
-    smoothDamping = (*server->location - *this->location).norm()/(*server->location - *this->start).norm();
+//    smoothDamping = (*server->location - *this->location).norm()/(*server->location - *this->start).norm();
+
 
     Vector2D tmpSpeed = smoothDamping * (*speed + *acceleration);
 
@@ -260,3 +272,6 @@ void Drone::updateSpeed(vector<Drone> drones) {
 //    cout << "SPEED : " << speed->norm() << " | ACC : " << acceleration->norm() <<   " | SMOOTH : "<< smoothDamping <<   " | VAL : "<< (smoothDamping * (speed->norm() - acceleration->norm()))  << endl;
 }
 
+Vector2D Drone::getPosition() {
+    return *location;
+}

@@ -39,7 +39,10 @@ public:
 
     void updateServer(Server *newServer);
 
+    Vector2D getPosition();
+
     void updateSpeed(vector<Drone> drones);
+
 };
 
 

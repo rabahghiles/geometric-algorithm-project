@@ -253,6 +253,26 @@ void Field::drawConvexHull() {
         glPopMatrix();
 
         glDisable(GL_TEXTURE_2D);
+
+        glColor3fv(BLACK);
+        glPushMatrix();
+        float centerx = tabPts[i].x;
+        float centery = tabPts[i].y;
+        glTranslatef(centerx, centery, 0);
+        glLineWidth(1);
+        glLineStipple(1, 0x00FF);
+        glEnable(GL_LINE_STIPPLE);
+        glBegin(GL_LINE_LOOP);
+        float rad = 10;
+        float a = M_PI;
+        for (int i = 0; i < 40; i++) {
+            glVertex2f(rad * cos(a), rad * sin(a));
+            a += (float) (M_PI / 20.0);
+        }
+        glDisable(GL_LINE_STIPPLE);
+        glEnd();
+        glLineWidth(1);
+        glPopMatrix();
     }
 
     // plot all points (for convex hull)
