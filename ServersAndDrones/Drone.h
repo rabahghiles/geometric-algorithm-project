@@ -1,33 +1,49 @@
 //
-// Created by Kwabena Bamfo on 23/01/2020.
+// Created by gadegbe on 20/01/2020.
 //
 
 #ifndef SERVERSANDDRONES_DRONE_H
 #define SERVERSANDDRONES_DRONE_H
 
+
+#include <iostream>
 #include <string>
-#include "Vector2D.h"
+#include <glutWindow.h>
+#include <vector>
+#include <vector>
+
 #include "Server.h"
 
-
 class Drone {
+
 private:
-    int droneId;
-    std::string icon;
-    int width;
-    int height;
-    Vector2D velocity;
-    Vector2D acceleration;
-    Vector2D target;
+    GLuint droneId;
+    Vector2D* speed;
+    Vector2D* location;
+    Vector2D* acceleration;
+    Vector2D* start;
+    Server* server;
+    float weight;
+    float radius;
+    float maxSpeed;
+    double dmax;
+    double r;
+    float thrustForceStrength;
+    float collisionForceStrength;
+    float smoothDamping;
 
 public:
-    Vector2D position;
 
     Drone();
 
-    void draw();
-    void move();
-    void updateServer(Server server);
+    void draw(std::vector<Drone *> drones);
+
+    void updateServer(Server *newServer);
+
+    Vector2D getPosition();
+
+    void updateSpeed(std::vector<Drone *> drones);
+
 };
 
 

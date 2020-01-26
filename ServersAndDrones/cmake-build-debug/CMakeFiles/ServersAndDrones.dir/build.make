@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /home/gadegbe/clion-2019.2.2/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /home/gadegbe/clion-2019.2.2/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/kwabena/CLionProjects/ServersAndDrones
+CMAKE_SOURCE_DIR = /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug
+CMAKE_BINARY_DIR = /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ServersAndDrones.dir/depend.make
@@ -59,120 +59,120 @@ include CMakeFiles/ServersAndDrones.dir/flags.make
 
 CMakeFiles/ServersAndDrones.dir/main.cpp.o: CMakeFiles/ServersAndDrones.dir/flags.make
 CMakeFiles/ServersAndDrones.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ServersAndDrones.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServersAndDrones.dir/main.cpp.o -c /Users/kwabena/CLionProjects/ServersAndDrones/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ServersAndDrones.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServersAndDrones.dir/main.cpp.o -c /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/main.cpp
 
 CMakeFiles/ServersAndDrones.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServersAndDrones.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kwabena/CLionProjects/ServersAndDrones/main.cpp > CMakeFiles/ServersAndDrones.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/main.cpp > CMakeFiles/ServersAndDrones.dir/main.cpp.i
 
 CMakeFiles/ServersAndDrones.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServersAndDrones.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kwabena/CLionProjects/ServersAndDrones/main.cpp -o CMakeFiles/ServersAndDrones.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/main.cpp -o CMakeFiles/ServersAndDrones.dir/main.cpp.s
 
 CMakeFiles/ServersAndDrones.dir/Field.cpp.o: CMakeFiles/ServersAndDrones.dir/flags.make
 CMakeFiles/ServersAndDrones.dir/Field.cpp.o: ../Field.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ServersAndDrones.dir/Field.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServersAndDrones.dir/Field.cpp.o -c /Users/kwabena/CLionProjects/ServersAndDrones/Field.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ServersAndDrones.dir/Field.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServersAndDrones.dir/Field.cpp.o -c /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Field.cpp
 
 CMakeFiles/ServersAndDrones.dir/Field.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServersAndDrones.dir/Field.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kwabena/CLionProjects/ServersAndDrones/Field.cpp > CMakeFiles/ServersAndDrones.dir/Field.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Field.cpp > CMakeFiles/ServersAndDrones.dir/Field.cpp.i
 
 CMakeFiles/ServersAndDrones.dir/Field.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServersAndDrones.dir/Field.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kwabena/CLionProjects/ServersAndDrones/Field.cpp -o CMakeFiles/ServersAndDrones.dir/Field.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Field.cpp -o CMakeFiles/ServersAndDrones.dir/Field.cpp.s
 
 CMakeFiles/ServersAndDrones.dir/Server.cpp.o: CMakeFiles/ServersAndDrones.dir/flags.make
 CMakeFiles/ServersAndDrones.dir/Server.cpp.o: ../Server.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ServersAndDrones.dir/Server.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServersAndDrones.dir/Server.cpp.o -c /Users/kwabena/CLionProjects/ServersAndDrones/Server.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ServersAndDrones.dir/Server.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServersAndDrones.dir/Server.cpp.o -c /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Server.cpp
 
 CMakeFiles/ServersAndDrones.dir/Server.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServersAndDrones.dir/Server.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kwabena/CLionProjects/ServersAndDrones/Server.cpp > CMakeFiles/ServersAndDrones.dir/Server.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Server.cpp > CMakeFiles/ServersAndDrones.dir/Server.cpp.i
 
 CMakeFiles/ServersAndDrones.dir/Server.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServersAndDrones.dir/Server.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kwabena/CLionProjects/ServersAndDrones/Server.cpp -o CMakeFiles/ServersAndDrones.dir/Server.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Server.cpp -o CMakeFiles/ServersAndDrones.dir/Server.cpp.s
 
 CMakeFiles/ServersAndDrones.dir/Vector2D.cpp.o: CMakeFiles/ServersAndDrones.dir/flags.make
 CMakeFiles/ServersAndDrones.dir/Vector2D.cpp.o: ../Vector2D.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ServersAndDrones.dir/Vector2D.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServersAndDrones.dir/Vector2D.cpp.o -c /Users/kwabena/CLionProjects/ServersAndDrones/Vector2D.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ServersAndDrones.dir/Vector2D.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServersAndDrones.dir/Vector2D.cpp.o -c /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Vector2D.cpp
 
 CMakeFiles/ServersAndDrones.dir/Vector2D.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServersAndDrones.dir/Vector2D.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kwabena/CLionProjects/ServersAndDrones/Vector2D.cpp > CMakeFiles/ServersAndDrones.dir/Vector2D.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Vector2D.cpp > CMakeFiles/ServersAndDrones.dir/Vector2D.cpp.i
 
 CMakeFiles/ServersAndDrones.dir/Vector2D.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServersAndDrones.dir/Vector2D.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kwabena/CLionProjects/ServersAndDrones/Vector2D.cpp -o CMakeFiles/ServersAndDrones.dir/Vector2D.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Vector2D.cpp -o CMakeFiles/ServersAndDrones.dir/Vector2D.cpp.s
 
 CMakeFiles/ServersAndDrones.dir/FieldDraw.cpp.o: CMakeFiles/ServersAndDrones.dir/flags.make
 CMakeFiles/ServersAndDrones.dir/FieldDraw.cpp.o: ../FieldDraw.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ServersAndDrones.dir/FieldDraw.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServersAndDrones.dir/FieldDraw.cpp.o -c /Users/kwabena/CLionProjects/ServersAndDrones/FieldDraw.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ServersAndDrones.dir/FieldDraw.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServersAndDrones.dir/FieldDraw.cpp.o -c /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/FieldDraw.cpp
 
 CMakeFiles/ServersAndDrones.dir/FieldDraw.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServersAndDrones.dir/FieldDraw.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kwabena/CLionProjects/ServersAndDrones/FieldDraw.cpp > CMakeFiles/ServersAndDrones.dir/FieldDraw.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/FieldDraw.cpp > CMakeFiles/ServersAndDrones.dir/FieldDraw.cpp.i
 
 CMakeFiles/ServersAndDrones.dir/FieldDraw.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServersAndDrones.dir/FieldDraw.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kwabena/CLionProjects/ServersAndDrones/FieldDraw.cpp -o CMakeFiles/ServersAndDrones.dir/FieldDraw.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/FieldDraw.cpp -o CMakeFiles/ServersAndDrones.dir/FieldDraw.cpp.s
 
 CMakeFiles/ServersAndDrones.dir/Triangle.cpp.o: CMakeFiles/ServersAndDrones.dir/flags.make
 CMakeFiles/ServersAndDrones.dir/Triangle.cpp.o: ../Triangle.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ServersAndDrones.dir/Triangle.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServersAndDrones.dir/Triangle.cpp.o -c /Users/kwabena/CLionProjects/ServersAndDrones/Triangle.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ServersAndDrones.dir/Triangle.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServersAndDrones.dir/Triangle.cpp.o -c /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Triangle.cpp
 
 CMakeFiles/ServersAndDrones.dir/Triangle.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServersAndDrones.dir/Triangle.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kwabena/CLionProjects/ServersAndDrones/Triangle.cpp > CMakeFiles/ServersAndDrones.dir/Triangle.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Triangle.cpp > CMakeFiles/ServersAndDrones.dir/Triangle.cpp.i
 
 CMakeFiles/ServersAndDrones.dir/Triangle.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServersAndDrones.dir/Triangle.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kwabena/CLionProjects/ServersAndDrones/Triangle.cpp -o CMakeFiles/ServersAndDrones.dir/Triangle.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Triangle.cpp -o CMakeFiles/ServersAndDrones.dir/Triangle.cpp.s
 
 CMakeFiles/ServersAndDrones.dir/determinant.cpp.o: CMakeFiles/ServersAndDrones.dir/flags.make
 CMakeFiles/ServersAndDrones.dir/determinant.cpp.o: ../determinant.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ServersAndDrones.dir/determinant.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServersAndDrones.dir/determinant.cpp.o -c /Users/kwabena/CLionProjects/ServersAndDrones/determinant.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ServersAndDrones.dir/determinant.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServersAndDrones.dir/determinant.cpp.o -c /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/determinant.cpp
 
 CMakeFiles/ServersAndDrones.dir/determinant.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServersAndDrones.dir/determinant.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kwabena/CLionProjects/ServersAndDrones/determinant.cpp > CMakeFiles/ServersAndDrones.dir/determinant.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/determinant.cpp > CMakeFiles/ServersAndDrones.dir/determinant.cpp.i
 
 CMakeFiles/ServersAndDrones.dir/determinant.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServersAndDrones.dir/determinant.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kwabena/CLionProjects/ServersAndDrones/determinant.cpp -o CMakeFiles/ServersAndDrones.dir/determinant.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/determinant.cpp -o CMakeFiles/ServersAndDrones.dir/determinant.cpp.s
 
 CMakeFiles/ServersAndDrones.dir/Polygon.cpp.o: CMakeFiles/ServersAndDrones.dir/flags.make
 CMakeFiles/ServersAndDrones.dir/Polygon.cpp.o: ../Polygon.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ServersAndDrones.dir/Polygon.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServersAndDrones.dir/Polygon.cpp.o -c /Users/kwabena/CLionProjects/ServersAndDrones/Polygon.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ServersAndDrones.dir/Polygon.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServersAndDrones.dir/Polygon.cpp.o -c /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Polygon.cpp
 
 CMakeFiles/ServersAndDrones.dir/Polygon.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServersAndDrones.dir/Polygon.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kwabena/CLionProjects/ServersAndDrones/Polygon.cpp > CMakeFiles/ServersAndDrones.dir/Polygon.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Polygon.cpp > CMakeFiles/ServersAndDrones.dir/Polygon.cpp.i
 
 CMakeFiles/ServersAndDrones.dir/Polygon.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServersAndDrones.dir/Polygon.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kwabena/CLionProjects/ServersAndDrones/Polygon.cpp -o CMakeFiles/ServersAndDrones.dir/Polygon.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Polygon.cpp -o CMakeFiles/ServersAndDrones.dir/Polygon.cpp.s
 
 CMakeFiles/ServersAndDrones.dir/Drone.cpp.o: CMakeFiles/ServersAndDrones.dir/flags.make
 CMakeFiles/ServersAndDrones.dir/Drone.cpp.o: ../Drone.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ServersAndDrones.dir/Drone.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServersAndDrones.dir/Drone.cpp.o -c /Users/kwabena/CLionProjects/ServersAndDrones/Drone.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ServersAndDrones.dir/Drone.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServersAndDrones.dir/Drone.cpp.o -c /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Drone.cpp
 
 CMakeFiles/ServersAndDrones.dir/Drone.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServersAndDrones.dir/Drone.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kwabena/CLionProjects/ServersAndDrones/Drone.cpp > CMakeFiles/ServersAndDrones.dir/Drone.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Drone.cpp > CMakeFiles/ServersAndDrones.dir/Drone.cpp.i
 
 CMakeFiles/ServersAndDrones.dir/Drone.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServersAndDrones.dir/Drone.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kwabena/CLionProjects/ServersAndDrones/Drone.cpp -o CMakeFiles/ServersAndDrones.dir/Drone.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Drone.cpp -o CMakeFiles/ServersAndDrones.dir/Drone.cpp.s
 
 # Object files for target ServersAndDrones
 ServersAndDrones_OBJECTS = \
@@ -199,8 +199,12 @@ ServersAndDrones: CMakeFiles/ServersAndDrones.dir/determinant.cpp.o
 ServersAndDrones: CMakeFiles/ServersAndDrones.dir/Polygon.cpp.o
 ServersAndDrones: CMakeFiles/ServersAndDrones.dir/Drone.cpp.o
 ServersAndDrones: CMakeFiles/ServersAndDrones.dir/build.make
+ServersAndDrones: /usr/lib/x86_64-linux-gnu/libglut.so
+ServersAndDrones: /usr/lib/x86_64-linux-gnu/libOpenGL.so
+ServersAndDrones: /usr/lib/x86_64-linux-gnu/libGLX.so
+ServersAndDrones: /usr/lib/x86_64-linux-gnu/libGLU.so
 ServersAndDrones: CMakeFiles/ServersAndDrones.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable ServersAndDrones"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable ServersAndDrones"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ServersAndDrones.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -213,6 +217,6 @@ CMakeFiles/ServersAndDrones.dir/clean:
 .PHONY : CMakeFiles/ServersAndDrones.dir/clean
 
 CMakeFiles/ServersAndDrones.dir/depend:
-	cd /Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/kwabena/CLionProjects/ServersAndDrones /Users/kwabena/CLionProjects/ServersAndDrones /Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug /Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug /Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug /home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ServersAndDrones.dir/depend
 

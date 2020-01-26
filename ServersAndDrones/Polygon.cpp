@@ -2,6 +2,7 @@
 // Created by Kwabena Bamfo on 12/01/2020.
 //
 
+#include <cstring>
 #include "Polygon.h"
 
 Polygon::Polygon(int p_max) : tabPts{new Vector2D[p_max]}, Nmax{p_max}, N{0} {

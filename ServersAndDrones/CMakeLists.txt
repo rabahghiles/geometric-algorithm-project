@@ -45,8 +45,8 @@ IF(LINUX)
 
     SET(GLUT_INCLUDE_DIR /usr/include)
     SET(GLUT_glut_LIBRARY /usr/lib/x86_64-linux-gnu/libglut.so)
-    set(GLUT_INTERFACE_DIRS  ../glutInterface)
-    set(GLUT_INTERFACE_LIB_DIRS  ../glutInterface/cmake-build-debug)
+    set(GLUT_INTERFACE_DIRS  ../../glutInterface)
+    set(GLUT_INTERFACE_LIB_DIRS  ../../glutInterface/cmake-build-debug)
 
     find_package(GLUT REQUIRED)
     link_directories(${GLUT_LIBRARY_DIRS})

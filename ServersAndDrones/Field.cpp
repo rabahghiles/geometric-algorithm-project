@@ -8,6 +8,7 @@
 #include <limits>
 
 #include <glutWindow.h>
+#include <stack>
 #include "Field.h"
 
 Vector2D* getLocation(std::string location);
@@ -111,8 +112,8 @@ void Field::draw() {
 //    }
 
     for (auto& drone: drones) {
-        drone->draw();
-        drone->move();
+        drone->draw(drones);
+//        drone->move();
     }
 //    glPopMatrix();
 }
@@ -615,7 +616,7 @@ void Field::addDrone() {
     float min = std::numeric_limits<float>::max();
     Server nearest;
     for(auto s: servers) {
-        auto a = d->position;
+        auto a = d->getPosition();
         auto b = s.location;
         auto ab = *b - a;
         auto abDistance = ab.norm();
@@ -624,7 +625,7 @@ void Field::addDrone() {
             nearest = s;
         }
     }
-    d->updateServer(nearest);
+    d->updateServer(&nearest);
 
     currentDrone = d;
     drones.push_back(d);
@@ -661,7 +662,7 @@ void Field::transferDrone() {
     }
 
     highestDesire.polygon->currentDrones += 1;
-    currentDrone->updateServer(highestDesire);
+    currentDrone->updateServer(&highestDesire);
 }
 
 

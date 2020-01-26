@@ -4,21 +4,26 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/kwabena/CLionProjects/ServersAndDrones/Drone.cpp" "/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/Drone.cpp.o"
-  "/Users/kwabena/CLionProjects/ServersAndDrones/Field.cpp" "/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/Field.cpp.o"
-  "/Users/kwabena/CLionProjects/ServersAndDrones/FieldDraw.cpp" "/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/FieldDraw.cpp.o"
-  "/Users/kwabena/CLionProjects/ServersAndDrones/Polygon.cpp" "/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/Polygon.cpp.o"
-  "/Users/kwabena/CLionProjects/ServersAndDrones/Server.cpp" "/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/Server.cpp.o"
-  "/Users/kwabena/CLionProjects/ServersAndDrones/Triangle.cpp" "/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/Triangle.cpp.o"
-  "/Users/kwabena/CLionProjects/ServersAndDrones/Vector2D.cpp" "/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/Vector2D.cpp.o"
-  "/Users/kwabena/CLionProjects/ServersAndDrones/determinant.cpp" "/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/determinant.cpp.o"
-  "/Users/kwabena/CLionProjects/ServersAndDrones/main.cpp" "/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/main.cpp.o"
+  "/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Drone.cpp" "/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/Drone.cpp.o"
+  "/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Field.cpp" "/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/Field.cpp.o"
+  "/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/FieldDraw.cpp" "/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/FieldDraw.cpp.o"
+  "/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Polygon.cpp" "/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/Polygon.cpp.o"
+  "/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Server.cpp" "/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/Server.cpp.o"
+  "/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Triangle.cpp" "/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/Triangle.cpp.o"
+  "/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Vector2D.cpp" "/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/Vector2D.cpp.o"
+  "/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/determinant.cpp" "/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/determinant.cpp.o"
+  "/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/main.cpp" "/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/main.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "AppleClang")
+set(CMAKE_CXX_COMPILER_ID "GNU")
+
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_CXX
+  "USE_FREEGLUT"
+  )
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../../glutInterface"
+  "../../../glutInterface"
   )
 
 # Targets to which this target links.
