@@ -7,6 +7,7 @@
 
 #include <string>
 #include "Vector2D.h"
+#include "Server.h"
 
 
 class Drone {
@@ -15,13 +16,18 @@ private:
     std::string icon;
     int width;
     int height;
-    Vector2D *position;
-    Vector2D *motion;
+    Vector2D velocity;
+    Vector2D acceleration;
+    Vector2D target;
+
 public:
+    Vector2D position;
+
     Drone();
 
     void draw();
     void move();
+    void updateServer(Server server);
 };
 
 

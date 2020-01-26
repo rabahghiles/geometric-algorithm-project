@@ -10,7 +10,12 @@ Drone::Drone() {
     droneId = GlutWindow::loadTGATexture("../Textures/drone_image.tga",lx,ly);
     width = 48.0;
     height = 48.0;
-    motion = new Vector2D(50,50);
+    position = Vector2D(50,50);
+
+    acceleration = target - position;
+    acceleration.normalize();
+
+    velocity = acceleration;
 }
 
 void Drone::draw() {
@@ -18,7 +23,7 @@ void Drone::draw() {
     glColor3f(1.0f,1.0f,1.0f);
     glBindTexture(GL_TEXTURE_2D,droneId);
     glPushMatrix();
-    glTranslatef(motion->x,motion->y,1.0);
+    glTranslatef(position.x,position.y,1.0);
     glBegin(GL_QUADS);
     glTexCoord2f(0.0,0.0);
     glVertex2f(0.0,0.0);
@@ -31,16 +36,22 @@ void Drone::draw() {
     glEnd();
     glPopMatrix();
     glDisable(GL_TEXTURE_2D);
-
-    if(motion->x == 221 && motion->y == 128) {
-        motion->x -= 10;
-        motion->y -= 10;
-    } else {
-        motion->x++;
-        motion->y++;
-    }
 }
 
 void Drone::move() {
+    position = position + velocity;
 
+    acceleration = target - position;
+    acceleration.normalize();
+    velocity = (velocity + acceleration);
+
+    if (velocity.norm() > 20) {
+        velocity = 0.2 * velocity;
+        velocity.normalize();
+        velocity = 20 * velocity;
+    }
+}
+
+void Drone::updateServer(Server server) {
+    target = *server.location;
 }

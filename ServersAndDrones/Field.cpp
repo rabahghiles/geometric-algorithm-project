@@ -85,6 +85,8 @@ float Field::crossProduct(const Vector2D& u, const Vector2D& v) {
 }
 
 void Field::draw() {
+//    glPushMatrix();
+//    glTranslatef(200,27,0);
     drawConvexHull();
     for (auto& triangle: tabTriangles) {
         triangle.draw();
@@ -95,22 +97,24 @@ void Field::draw() {
     }
 //    drawTriangulation();
 
-//    for(auto& polygon: tabPolygons) {
-//        polygon->draw();
-//    }
-
-    if (tabPolygons.size() > 5) {
-        tabPolygons[0]->draw();
-        tabPolygons[1]->draw();
-        tabPolygons[2]->draw();
-        tabPolygons[3]->draw();
-        tabPolygons[4]->draw();
-        tabPolygons[5]->draw();
+    for(auto& polygon: tabPolygons) {
+        polygon->draw();
     }
+
+//    if (tabPolygons.size() > 5) {
+//        tabPolygons[0]->draw();
+//        tabPolygons[1]->draw();
+//        tabPolygons[2]->draw();
+//        tabPolygons[3]->draw();
+//        tabPolygons[4]->draw();
+//        tabPolygons[5]->draw();
+//    }
 
     for (auto& drone: drones) {
         drone->draw();
+        drone->move();
     }
+//    glPopMatrix();
 }
 
 void Field::convexHull() {
@@ -456,7 +460,7 @@ Vector2D intersectionWithBorders(Vector2D a, Vector2D u, float x0, float y0, flo
     return P;
 }
 
-void Field::voronoiDiagram() {
+void Field::voronoiDiagram(int width, int height) {
     Polygon* Pi;
     std::list<Triangle> triangleSubset;
 
@@ -540,7 +544,7 @@ void Field::voronoiDiagram() {
 //            std::cout << "H1: " << H.x << "," << H.y << std::endl;
             Vector2D u = (E - *vertex).rightOrtho();
 //            std::cout << "u1: " << u.x << "," << u.y << std::endl;
-            Q1 = intersectionWithBorders(H, u, 0, 0, 1000, 1000);
+            Q1 = intersectionWithBorders(H, u, 0, 0, width, height);
             std::cout << "Q1: " << Q1.x << "," << Q1.y << std::endl;
             Pi->addVector(Q1);
         } else {
@@ -564,7 +568,7 @@ void Field::voronoiDiagram() {
 //            std::cout << "H2: " << H.x << "," << H.y << std::endl;
             Vector2D u = (*vertex - E).rightOrtho();
 //            std::cout << "u2: " << u.x << "," << u.y << std::endl;
-            Q2 = intersectionWithBorders(H, u, 0, 0, 1000, 1000);
+            Q2 = intersectionWithBorders(H, u, 0, 0, width, height);
             std::cout << "Q2: " << Q2.x << "," << Q2.y << std::endl;
             Pi->addVector(Q2);
         }
@@ -576,29 +580,88 @@ void Field::voronoiDiagram() {
                 (Q2.x == 0 && Q1.y == 0))
                 Pi->addVector(Vector2D(0,0));
 
-            else if ((Q1.x == 1000 && Q2.y == 0) ||
-                     (Q2.x == 1000 && Q1.y == 0))
-                Pi->addVector(Vector2D(1000,0));
+            else if ((Q1.x == width && Q2.y == 0) ||
+                     (Q2.x == width && Q1.y == 0))
+                Pi->addVector(Vector2D(width,0));
 
-            else if ((Q1.x == 0 && Q2.y == 1000) ||
-                     (Q2.x == 0 && Q1.y == 1000))
-                    Pi->addVector(Vector2D(0,1000));
+            else if ((Q1.x == 0 && Q2.y == height) ||
+                     (Q2.x == 0 && Q1.y == height))
+                    Pi->addVector(Vector2D(0,height));
 
-            else if ((Q1.x == 1000 && Q2.y == 1000) ||
-                     (Q2.x == 1000 && Q1.y == 1000))
-                Pi->addVector(Vector2D(1000,1000));
+            else if ((Q1.x == width && Q2.y == height) ||
+                     (Q2.x == width && Q1.y == height))
+                Pi->addVector(Vector2D(width,height));
         }
 
         tabPolygons.push_back(Pi);
+
+        // associate server with polygon
+        for(auto &s: servers) {
+            if(s.location->x == vertex->x && s.location->y == vertex->y) {
+                s.polygon = Pi;
+//                Pi->setColor(s.color);
+                break;
+            }
+        }
     }
 
-    for(auto p: tabPolygons) {
-        std::cout << p->N << std::endl;
-    }
+//    for(auto p: tabPolygons) {
+//        std::cout << p->N << std::endl;
+//    }
 }
 
 void Field::addDrone() {
-    drones.push_back(new Drone());
+    Drone *d = new Drone();
+    float min = std::numeric_limits<float>::max();
+    Server nearest;
+    for(auto s: servers) {
+        auto a = d->position;
+        auto b = s.location;
+        auto ab = *b - a;
+        auto abDistance = ab.norm();
+        if(abDistance < min){
+            min = abDistance;
+            nearest = s;
+        }
+    }
+    d->updateServer(nearest);
+
+    currentDrone = d;
+    drones.push_back(d);
+}
+
+void Field::makePolygonTriangles() {
+    for(auto& p: tabPolygons) {
+        p->triangulation();
+    }
+}
+
+void Field::calculatePolygonAreas() {
+    for(auto& p: tabPolygons) {
+        p->calculateArea();
+    }
+}
+
+void Field::updateDesired(float fieldArea) {
+    for(auto& p: tabPolygons) {
+        int totalDrones = drones.size();
+        p->updateDesired(fieldArea, totalDrones);
+    }
+}
+
+void Field::transferDrone() {
+    float max = -1;
+    Server highestDesire;
+    // send to best among neighbour
+    for(auto &s: servers) {
+        if(s.polygon->desiredDrones > max) {
+            max = s.polygon->desiredDrones;
+            highestDesire = s;
+        }
+    }
+
+    highestDesire.polygon->currentDrones += 1;
+    currentDrone->updateServer(highestDesire);
 }
 
 

@@ -5,7 +5,11 @@ CMakeFiles/ServersAndDrones.dir/Drone.cpp.o
  ../../glutInterface/glutWindow.h
  /Users/kwabena/CLionProjects/ServersAndDrones/Drone.cpp
  /Users/kwabena/CLionProjects/ServersAndDrones/Drone.h
+ /Users/kwabena/CLionProjects/ServersAndDrones/Polygon.h
+ /Users/kwabena/CLionProjects/ServersAndDrones/Server.h
+ /Users/kwabena/CLionProjects/ServersAndDrones/Triangle.h
  /Users/kwabena/CLionProjects/ServersAndDrones/Vector2D.h
+ /Users/kwabena/CLionProjects/ServersAndDrones/determinant.h
 CMakeFiles/ServersAndDrones.dir/Field.cpp.o
  ../../glutInterface/glutWindow.h
  /Users/kwabena/CLionProjects/ServersAndDrones/Drone.h
@@ -31,17 +35,19 @@ CMakeFiles/ServersAndDrones.dir/Polygon.cpp.o
  ../../glutInterface/glutWindow.h
  /Users/kwabena/CLionProjects/ServersAndDrones/Polygon.cpp
  /Users/kwabena/CLionProjects/ServersAndDrones/Polygon.h
- /Users/kwabena/CLionProjects/ServersAndDrones/Server.h
  /Users/kwabena/CLionProjects/ServersAndDrones/Triangle.h
  /Users/kwabena/CLionProjects/ServersAndDrones/Vector2D.h
  /Users/kwabena/CLionProjects/ServersAndDrones/determinant.h
 CMakeFiles/ServersAndDrones.dir/Server.cpp.o
+ ../../glutInterface/glutWindow.h
+ /Users/kwabena/CLionProjects/ServersAndDrones/Polygon.h
  /Users/kwabena/CLionProjects/ServersAndDrones/Server.cpp
  /Users/kwabena/CLionProjects/ServersAndDrones/Server.h
+ /Users/kwabena/CLionProjects/ServersAndDrones/Triangle.h
  /Users/kwabena/CLionProjects/ServersAndDrones/Vector2D.h
+ /Users/kwabena/CLionProjects/ServersAndDrones/determinant.h
 CMakeFiles/ServersAndDrones.dir/Triangle.cpp.o
  ../../glutInterface/glutWindow.h
- /Users/kwabena/CLionProjects/ServersAndDrones/Server.h
  /Users/kwabena/CLionProjects/ServersAndDrones/Triangle.cpp
  /Users/kwabena/CLionProjects/ServersAndDrones/Triangle.h
  /Users/kwabena/CLionProjects/ServersAndDrones/Vector2D.h

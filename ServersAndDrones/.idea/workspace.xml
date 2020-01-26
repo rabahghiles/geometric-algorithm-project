@@ -26,7 +26,7 @@
   <component name="ProjectId" id="1VZ4m7pEI2m6G6s0Yq3svyzIP42" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../circumscribe 2" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -78,7 +78,7 @@
       <workItem from="1578787230400" duration="23729000" />
       <workItem from="1579214518856" duration="72802000" />
       <workItem from="1579560957347" duration="8211000" />
-      <workItem from="1579766811392" duration="20833000" />
+      <workItem from="1579766811392" duration="91615000" />
     </task>
     <servers />
   </component>

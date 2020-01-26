@@ -4,7 +4,11 @@
 CMakeFiles/ServersAndDrones.dir/Drone.cpp.o: ../../glutInterface/glutWindow.h
 CMakeFiles/ServersAndDrones.dir/Drone.cpp.o: ../Drone.cpp
 CMakeFiles/ServersAndDrones.dir/Drone.cpp.o: ../Drone.h
+CMakeFiles/ServersAndDrones.dir/Drone.cpp.o: ../Polygon.h
+CMakeFiles/ServersAndDrones.dir/Drone.cpp.o: ../Server.h
+CMakeFiles/ServersAndDrones.dir/Drone.cpp.o: ../Triangle.h
 CMakeFiles/ServersAndDrones.dir/Drone.cpp.o: ../Vector2D.h
+CMakeFiles/ServersAndDrones.dir/Drone.cpp.o: ../determinant.h
 
 CMakeFiles/ServersAndDrones.dir/Field.cpp.o: ../../glutInterface/glutWindow.h
 CMakeFiles/ServersAndDrones.dir/Field.cpp.o: ../Drone.h
@@ -30,17 +34,19 @@ CMakeFiles/ServersAndDrones.dir/FieldDraw.cpp.o: ../determinant.h
 CMakeFiles/ServersAndDrones.dir/Polygon.cpp.o: ../../glutInterface/glutWindow.h
 CMakeFiles/ServersAndDrones.dir/Polygon.cpp.o: ../Polygon.cpp
 CMakeFiles/ServersAndDrones.dir/Polygon.cpp.o: ../Polygon.h
-CMakeFiles/ServersAndDrones.dir/Polygon.cpp.o: ../Server.h
 CMakeFiles/ServersAndDrones.dir/Polygon.cpp.o: ../Triangle.h
 CMakeFiles/ServersAndDrones.dir/Polygon.cpp.o: ../Vector2D.h
 CMakeFiles/ServersAndDrones.dir/Polygon.cpp.o: ../determinant.h
 
+CMakeFiles/ServersAndDrones.dir/Server.cpp.o: ../../glutInterface/glutWindow.h
+CMakeFiles/ServersAndDrones.dir/Server.cpp.o: ../Polygon.h
 CMakeFiles/ServersAndDrones.dir/Server.cpp.o: ../Server.cpp
 CMakeFiles/ServersAndDrones.dir/Server.cpp.o: ../Server.h
+CMakeFiles/ServersAndDrones.dir/Server.cpp.o: ../Triangle.h
 CMakeFiles/ServersAndDrones.dir/Server.cpp.o: ../Vector2D.h
+CMakeFiles/ServersAndDrones.dir/Server.cpp.o: ../determinant.h
 
 CMakeFiles/ServersAndDrones.dir/Triangle.cpp.o: ../../glutInterface/glutWindow.h
-CMakeFiles/ServersAndDrones.dir/Triangle.cpp.o: ../Server.h
 CMakeFiles/ServersAndDrones.dir/Triangle.cpp.o: ../Triangle.cpp
 CMakeFiles/ServersAndDrones.dir/Triangle.cpp.o: ../Triangle.h
 CMakeFiles/ServersAndDrones.dir/Triangle.cpp.o: ../Vector2D.h

@@ -5,9 +5,10 @@
 #include "FieldDraw.h"
 
 
-FieldDraw::FieldDraw(const string &title, int argc, char **argv, unsigned int width = 1000, unsigned int height = 1000)
+FieldDraw::FieldDraw(const string &title, int argc, char **argv, unsigned int width = 1000, unsigned int height = 856)
         : GlutWindow(argc, argv, title, width, height, FIXED){
     droneId=0;
+    surfaceArea = width * height;
 }
 
 void FieldDraw::onStart() {
@@ -41,10 +42,17 @@ void FieldDraw::onKeyPressed(unsigned char c, double x, double y) {
             field->checkDelaunay();
             break;
         case 'v':
-            field->voronoiDiagram();
+            field->voronoiDiagram(width,height);
+            field->makePolygonTriangles();
+            field->calculatePolygonAreas();
+//            for(auto s: field->servers) {
+//                std::cout << s.city << ":" << s.polygon->surfaceArea << std::endl;
+//            }
             break;
         case 'd':
             field->addDrone();
+            field->updateDesired(surfaceArea);
+            field->transferDrone();
             break;
     }
 }

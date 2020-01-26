@@ -12,7 +12,7 @@
 
 
 class Polygon {
-    Vector2D *tabPts;
+    std::vector<Triangle> polyTriangles;
     int Nmax;
     float color[4];
 
@@ -21,8 +21,17 @@ public:
     Polygon(int p_max);
     ~Polygon();
 
+    float surfaceArea;
+
+    Vector2D *tabPts;
+
+    float currentDrones;
+    float desiredDrones;
+
     bool addVector(const Vector2D &p);
     void draw();
+    void calculateArea();
+    void updateDesired(float fieldArea, int totalDrones);
 
     /**
      * @brief Check if the vertex p is inside the polygon.
@@ -50,6 +59,7 @@ public:
     bool isOnTheLeft(const Vector2D* p, const Vector2D* p1, const Vector2D* p2);
     float crossProduct(const Vector2D& u, const Vector2D& v);
     void setColor(const float *t_color);
+
 };
 
 
