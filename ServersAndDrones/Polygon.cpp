@@ -7,9 +7,15 @@
 
 Polygon::Polygon(int p_max) : tabPts{new Vector2D[p_max]}, Nmax{p_max}, N{0} {
     setColor(WHITE);
+    setSelectColor(WHITE);
+    setSaveColor(WHITE);
+    c = "WHITE";
+    selectC = "WHITE";
+    saveC = "WHITE";
     surfaceArea = 0;
     currentDrones = 0;
     desiredDrones = 0;
+    isHighlighted = false;
 }
 
 Polygon::~Polygon() {
@@ -28,6 +34,14 @@ void Polygon::setColor(const float *t_color) {
     memcpy(color, t_color, 4 * sizeof(float));
 }
 
+void Polygon::setSelectColor(const float *t_color) {
+    memcpy(selectColor, t_color, 4 * sizeof(float));
+}
+
+void Polygon::setSaveColor(const float *t_color) {
+    memcpy(saveColor, t_color, 4 * sizeof(float));
+}
+
 float Polygon::crossProduct(const Vector2D& u, const Vector2D& v) {
     return (u.x * v.y - u.y * v.x);
 }
@@ -35,7 +49,9 @@ float Polygon::crossProduct(const Vector2D& u, const Vector2D& v) {
 void Polygon::draw() {
 
     // Draw the interior of the polygon.
-    glColor3fv(color);
+//    glColor3fv(color);
+    glColor3fv((isHighlighted ? GREY : color));
+
 //    glBegin(GL_POLYGON);
 //    for (int i = 0; i < N; i++) {
 //        glVertex2f(tabPts[i].x, tabPts[i].y);
@@ -202,4 +218,8 @@ bool Polygon::isOnTheRight(const Vector2D &p, int i) {
             v = p - tabPts[i];
 
     return crossProduct(u, v) <= 0;
+}
+
+void Polygon::onMouseMove(const Vector2D& pos) {
+    isHighlighted = isInside(pos);
 }

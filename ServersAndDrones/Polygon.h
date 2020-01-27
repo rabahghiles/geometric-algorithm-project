@@ -28,6 +28,14 @@ public:
     float desiredDrones;
 
     float color[4];
+    float selectColor[4];
+    float saveColor[4];
+
+    std::string c;
+    std::string selectC;
+    std::string saveC;
+
+    bool isHighlighted;
 
     bool addVector(const Vector2D &p);
     void draw();
@@ -60,12 +68,19 @@ public:
     bool isOnTheLeft(const Vector2D* p, const Vector2D* p1, const Vector2D* p2);
     float crossProduct(const Vector2D& u, const Vector2D& v);
     void setColor(const float *t_color);
+    void setSaveColor(const float *t_color);
+    void setSelectColor(const float *t_color);
+
+
 
     bool isInsideRight(const Vector2D &p);
     bool isInsideLeft(const Vector2D &p);
     bool isOnTheRight(const Vector2D& p, int i);
 
-};
+    void onMouseMove(const Vector2D& pos);
+
+
+    };
 
 
 #endif //SERVERSANDDRONES_POLYGON_H

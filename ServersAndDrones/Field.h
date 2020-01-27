@@ -35,7 +35,6 @@ public:
 
     std::vector<Server> servers;
 
-    float *lastColor;
     Server lastSelected;
 
     void addServers();
