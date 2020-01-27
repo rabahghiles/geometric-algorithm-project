@@ -50,7 +50,7 @@ void Polygon::draw() {
 
     // Draw the interior of the polygon.
 //    glColor3fv(color);
-    glColor3fv((isHighlighted ? GREY : color));
+    glColor3fv((color));
 
 //    glBegin(GL_POLYGON);
 //    for (int i = 0; i < N; i++) {

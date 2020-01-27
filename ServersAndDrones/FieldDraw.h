@@ -27,6 +27,8 @@ public:
     void onMouseDown(int button,double x,double y) override;
 
 
+    void delaunay();
+    void voronoi();
 };
 
 

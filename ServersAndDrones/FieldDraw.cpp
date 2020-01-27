@@ -11,6 +11,8 @@ FieldDraw::FieldDraw(const string &title, int argc, char **argv, unsigned int wi
     surfaceArea = width * height;
     Server* selectedServer;
     Polygon* selectedPolygon;
+//    delaunay();
+//    voronoi();
 }
 
 void FieldDraw::onStart() {
@@ -43,7 +45,8 @@ void FieldDraw::onKeyPressed(unsigned char c, double x, double y) {
             field->delaunayTriangulation();
             field->checkDelaunay();
             break;
-        case 'v':
+        case 'v':    delaunay();
+    voronoi();
             field->voronoiDiagram(width,height);
             field->makePolygonTriangles();
             field->calculatePolygonAreas();
@@ -140,4 +143,18 @@ void FieldDraw::onMouseDown(int button, double x, double y) {
     if (button = GLUT_RIGHT_BUTTON) {
         field->findSelected(x,y);
     }
+}
+
+void FieldDraw::delaunay() {
+    field->delaunayTriangulation();
+    field->checkDelaunay();
+}
+
+void FieldDraw::voronoi() {
+    field->voronoiDiagram(width, height);
+    field->makePolygonTriangles();
+    field->calculatePolygonAreas();
+//            for(auto s: field->servers) {
+//                std::cout << s.city << ":" << s.polygon->surfaceArea << std::endl;
+//            }
 }

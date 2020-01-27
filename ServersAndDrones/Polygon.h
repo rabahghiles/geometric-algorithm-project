@@ -17,7 +17,9 @@ class Polygon {
 
 public:
     int N;
+
     Polygon(int p_max);
+
     ~Polygon();
 
     float surfaceArea;
@@ -38,8 +40,11 @@ public:
     bool isHighlighted;
 
     bool addVector(const Vector2D &p);
+
     void draw();
+
     void calculateArea();
+
     void updateDesired(float fieldArea, int totalDrones);
 
     /**
@@ -47,7 +52,7 @@ public:
      * @param p the vertex to check.
      * @return true if the vertex p is inside, false otherwise.
      */
-    bool isInside(const Vector2D& p);
+    bool isInside(const Vector2D &p);
 
     /**
     * @brief Test if the vertex is on the left of the vertex p.
@@ -55,7 +60,7 @@ public:
     * @param i
     * @return true if the vertex is on the left, false otherwise
     */
-    bool isOnTheLeft(const Vector2D& p, int i);
+    bool isOnTheLeft(const Vector2D &p, int i);
 
     /**
     * @brief check if the polygon is convex.
@@ -64,23 +69,30 @@ public:
     bool isConvex();
 
     void triangulation();
+
     static bool polarComparison(Vector2D P1, Vector2D P2);
-    bool isOnTheLeft(const Vector2D* p, const Vector2D* p1, const Vector2D* p2);
-    float crossProduct(const Vector2D& u, const Vector2D& v);
+
+    bool isOnTheLeft(const Vector2D *p, const Vector2D *p1, const Vector2D *p2);
+
+    float crossProduct(const Vector2D &u, const Vector2D &v);
+
     void setColor(const float *t_color);
+
     void setSaveColor(const float *t_color);
+
     void setSelectColor(const float *t_color);
 
 
-
     bool isInsideRight(const Vector2D &p);
+
     bool isInsideLeft(const Vector2D &p);
-    bool isOnTheRight(const Vector2D& p, int i);
 
-    void onMouseMove(const Vector2D& pos);
+    bool isOnTheRight(const Vector2D &p, int i);
+
+    void onMouseMove(const Vector2D &pos);
 
 
-    };
+};
 
 
 #endif //SERVERSANDDRONES_POLYGON_H

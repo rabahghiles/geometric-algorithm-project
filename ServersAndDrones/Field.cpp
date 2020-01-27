@@ -11,7 +11,8 @@
 #include <stack>
 #include "Field.h"
 
-Vector2D* getLocation(std::string location);
+Vector2D *getLocation(std::string location);
+
 void flip(Triangle &ptr1, Triangle &ptr2);
 
 
@@ -20,7 +21,7 @@ Field::Field(std::string filename) {
 }
 
 void Field::addServers() {
-    std::string fileDir = "../Data/"+file;
+    std::string fileDir = "../Data/" + file;
     std::ifstream fin(fileDir);
     std::string line;
 
@@ -30,17 +31,17 @@ void Field::addServers() {
 
         std::string city = line.substr(0, a);
         std::string location = line.substr(a + 1, b - (a + 1));
-        Vector2D* loc = getLocation(location);
+        Vector2D *loc = getLocation(location);
         std::string color = line.substr(b + 1, line.length() - (b + 1));
 
-        servers.push_back(Server(city,loc,color));
+        servers.push_back(Server(city, loc, color));
     }
 }
 
-Vector2D* getLocation(std::string location){
+Vector2D *getLocation(std::string location) {
     int comma = location.find(",");
-    std::string locationx = location.substr(1,comma-1);
-    std::string locationy = location.substr(comma+1,location.length()-(comma+2));
+    std::string locationx = location.substr(1, comma - 1);
+    std::string locationy = location.substr(comma + 1, location.length() - (comma + 2));
 
     std::stringstream x(locationx);
     float fx = 0;
@@ -50,7 +51,7 @@ Vector2D* getLocation(std::string location){
     float fy = 0;
     y >> fy;
 
-    Vector2D* vd = new Vector2D(fx,fy);
+    Vector2D *vd = new Vector2D(fx, fy);
 
     return vd;
 }
@@ -75,13 +76,13 @@ bool Field::polarComparison(Vector2D P1, Vector2D P2) {
     return a1 < a2;
 }
 
-bool Field::isOnTheLeft(const Vector2D* P, const Vector2D* P1, const Vector2D* P2) {
+bool Field::isOnTheLeft(const Vector2D *P, const Vector2D *P1, const Vector2D *P2) {
     Vector2D AB = *P2 - *P1,
             AP = *P - *P1;
-    return crossProduct(AB,AP) >= 0;
+    return crossProduct(AB, AP) >= 0;
 }
 
-float Field::crossProduct(const Vector2D& u, const Vector2D& v) {
+float Field::crossProduct(const Vector2D &u, const Vector2D &v) {
     return (u.x * v.y - u.y * v.x);
 }
 
@@ -89,16 +90,16 @@ void Field::draw() {
 //    glPushMatrix();
 //    glTranslatef(200,27,0);
     drawConvexHull();
-    for (auto& triangle: tabTriangles) {
+    for (auto &triangle: tabTriangles) {
         triangle.draw();
     }
 
-    for (auto& triangle: tabTriangles) {
+    for (auto &triangle: tabTriangles) {
         triangle.drawCircle();
     }
 //    drawTriangulation();
 
-    for(auto& polygon: tabPolygons) {
+    for (auto &polygon: tabPolygons) {
         polygon->draw();
     }
 
@@ -111,11 +112,34 @@ void Field::draw() {
 //        tabPolygons[5]->draw();
 //    }
 
-    for (auto& drone: drones) {
-        drone->draw(drones);
-//        drone->move();
+
+    for (auto &server: servers) {
+        server.drones.clear();
+        server.draw();
     }
-//    glPopMatrix();
+
+    for (auto &drone: drones) {
+        drone->draw(drones);
+        for (auto &server: servers) {
+            if (server.polygon->isInside(drone->getPosition())) {
+//                server.drones.push_back(drone);
+                glColor3fv(BLACK);
+                glPushMatrix();
+                glLineWidth(2);
+                glBegin(GL_LINES);
+                glVertex2f(drone->getPosition().x, drone->getPosition().y);
+                glVertex2f(server.location->x, server.location->y);
+                glEnd();
+                glPopMatrix();
+
+                glColor3fv(RED);
+                GlutWindow::drawText(drone->getPosition().x, drone->getPosition().y - 40, server.city,
+                                     GlutWindow::ALIGN_RIGHT);
+            };
+        }
+    }
+
+
 }
 
 void Field::convexHull() {
@@ -129,8 +153,8 @@ void Field::convexHull() {
     auto s = servers.begin();
     auto symin = servers.begin();
 
-    while(s != servers.end()) {
-        if(s->location->y < symin->location->y) {
+    while (s != servers.end()) {
+        if (s->location->y < symin->location->y) {
             symin = s;
         }
         s++;
@@ -150,7 +174,7 @@ void Field::convexHull() {
     // Sorting point with angular criteria.
     sort(pointsRelative.begin() + 1, pointsRelative.end(), polarComparison);
 
-    std::stack<Vector2D*> CHstack;
+    std::stack<Vector2D *> CHstack;
     Vector2D *top_1, *top;
     CHstack.push(&pointsRelative[0]);
     CHstack.push(&pointsRelative[1]);
@@ -179,9 +203,9 @@ void Field::convexHull() {
     // Get stack points to create current polygon
     N = CHstack.size();
     Nmax = N;
-    tabPts = new Vector2D[Nmax+1];
+    tabPts = new Vector2D[Nmax + 1];
 
-    int i = N-1;
+    int i = N - 1;
     while (!CHstack.empty()) {
         tabPts[i--] = *(CHstack.top()) + origin;
         CHstack.pop();
@@ -193,13 +217,13 @@ void Field::drawConvexHull() {
     glColor3fv(BLACK);
     glLineWidth(3);
     glBegin(GL_LINE_LOOP);
-    for (int i=0; i<N; i++) {
+    for (int i = 0; i < N; i++) {
         glVertex2f(tabPts[i].x, tabPts[i].y);
     }
     glEnd();
 
     glLineWidth(1);
-    for (int i=0; i<N; i++) {
+    for (int i = 0; i < N; i++) {
         glBegin(GL_LINES);
         glVertex2f(tabPts[i].x - 10, tabPts[i].y - 10);
         glVertex2f(tabPts[i].x + 10, tabPts[i].y + 10);
@@ -214,45 +238,45 @@ void Field::drawConvexHull() {
     }
 
     // plot all points (for convex hull)
-    for (Vector2D* points: allPoints) {
+    for (Vector2D *points: allPoints) {
         glColor3fv(RED);
         GlutWindow::fillEllipse(points->x, points->y, 2.5, 2.5);
     }
 }
 
 void Field::triangulation() {
-    std::vector<Vector2D*> tmp;
+    std::vector<Vector2D *> tmp;
 
     // copy the list of vertices in the tmp list.
-    for (int i=0; i<N; i++) {
+    for (int i = 0; i < N; i++) {
         tmp.push_back(&(tabPts[i]));
     }
 
     int n = N;
 
     // while we can add a triangle to tabTriangle.
-    while (n>2) {
+    while (n > 2) {
         int i = 0;
         auto p = tmp.begin();
         bool test;
         // create a triangle using p, p+1 and p+2 as vertices
-        Triangle T(*p,*(p+1),*(p+2));
+        Triangle T(*p, *(p + 1), *(p + 2));
 
         // Search a triangle without another points inside
         do {
-            test = !T.isEmpty(tmp, i+3);
+            test = !T.isEmpty(tmp, i + 3);
             if (test) {
                 i++;
                 p++;
-                T = Triangle(*p,*(p+1),*(p+2));
+                T = Triangle(*p, *(p + 1), *(p + 2));
             }
-        } while (i<n-2 && test);
+        } while (i < n - 2 && test);
 
-        assert(i<n-2);
+        assert(i < n - 2);
 
         // Add T to tabTriangles.
         tabTriangles.push_back(T);
-        tmp.erase(p+1); // remove point(p + 1) from tmp.
+        tmp.erase(p + 1); // remove point(p + 1) from tmp.
         n--; // or n = tmp.size().
     }
 }
@@ -285,24 +309,24 @@ void Field::getInteriorPoints() {
 
     while (p != allPoints.end()) {
         bool isInterior = true;
-        for(int i=0; i<N && isInterior; i++) {
-            if((*p)->x == tabPts[i].x && (*p)->y == tabPts[i].y)
+        for (int i = 0; i < N && isInterior; i++) {
+            if ((*p)->x == tabPts[i].x && (*p)->y == tabPts[i].y)
                 isInterior = false;
         }
-        if(isInterior)
+        if (isInterior)
             interiorPoints.push_back(*p);
         p++;
     }
 }
 
 void Field::seeInteriorPoints() {
-    for(auto p: interiorPoints) {
+    for (auto p: interiorPoints) {
         std::cout << p->x << "," << p->y << std::endl;
     }
 }
 
 void Field::addInteriorPoints() {
-    std::list<Triangle*> processList;
+    std::list<Triangle *> processList;
 
     auto t = tabTriangles.begin();
     // copy tabTriangles in a list
@@ -314,20 +338,20 @@ void Field::addInteriorPoints() {
     auto pl = processList.begin();
     bool test;
 
-    while(pl != processList.end()) {
+    while (pl != processList.end()) {
         Triangle *current = *pl;
         Vector2D *a = current->ptr[0];
         Vector2D *b = current->ptr[1];
         Vector2D *c = current->ptr[2];
 
         auto ip = interiorPoints.begin();
-        while(ip != interiorPoints.end()) {
+        while (ip != interiorPoints.end()) {
             test = current->isInside(*(*ip));
             if (test) {
                 tabTriangles.remove(*current);
-                tabTriangles.push_back(Triangle(a,b,*ip));
-                tabTriangles.push_back(Triangle(b,c,*ip));
-                tabTriangles.push_back(Triangle(c,a,*ip));
+                tabTriangles.push_back(Triangle(a, b, *ip));
+                tabTriangles.push_back(Triangle(b, c, *ip));
+                tabTriangles.push_back(Triangle(c, a, *ip));
             }
             ip++;
         }
@@ -337,7 +361,7 @@ void Field::addInteriorPoints() {
 }
 
 void Field::delaunayTriangulation() {
-    std::list<Triangle*> processList;
+    std::list<Triangle *> processList;
     auto t = tabTriangles.begin();
 
     // copy tabTriangles in a list
@@ -347,7 +371,7 @@ void Field::delaunayTriangulation() {
     }
 
     // while a triangle is in the list
-    while (processList.size()>1) {
+    while (processList.size() > 1) {
         Triangle *current = processList.front(); // pop current
         processList.pop_front();
 
@@ -362,15 +386,15 @@ void Field::delaunayTriangulation() {
 //            std::cout << " " << Tneighbor->ptr[2]->x << "," << Tneighbor->ptr[2]->y << std::endl;
 
             // and if a neighbor is available
-            if (Tneighbor!=nullptr) {
-                flip(*current,*Tneighbor); // flip the common edge
+            if (Tneighbor != nullptr) {
+                flip(*current, *Tneighbor); // flip the common edge
 
                 // remove Tneighbor from the list
-                auto tr=processList.begin();
-                while (tr!=processList.end() && (*tr)!=Tneighbor) {
+                auto tr = processList.begin();
+                while (tr != processList.end() && (*tr) != Tneighbor) {
                     tr++;
                 }
-                if (tr!=processList.end()) processList.erase(tr);
+                if (tr != processList.end()) processList.erase(tr);
             } else {
                 processList.push_back(current); // postpone the treatment
             }
@@ -378,10 +402,10 @@ void Field::delaunayTriangulation() {
     }
 }
 
-Triangle* Field::neighborInside(Triangle* currentTriangle) {
-    Vector2D* a = currentTriangle->ptr[0];
-    Vector2D* b = currentTriangle->ptr[1];
-    Vector2D* c = currentTriangle->ptr[2];
+Triangle *Field::neighborInside(Triangle *currentTriangle) {
+    Vector2D *a = currentTriangle->ptr[0];
+    Vector2D *b = currentTriangle->ptr[1];
+    Vector2D *c = currentTriangle->ptr[2];
 
     auto t = tabTriangles.begin();
     while (t != tabTriangles.end()) {
@@ -392,19 +416,19 @@ Triangle* Field::neighborInside(Triangle* currentTriangle) {
 
             bool a_foundMatch = false, b_foundMatch = false, c_foundMatch = false;
 
-            for(int i=0; i<3; i++){
-                if (!a_foundMatch && a->x==t->ptr[i]->x && a->y==t->ptr[i]->y)
+            for (int i = 0; i < 3; i++) {
+                if (!a_foundMatch && a->x == t->ptr[i]->x && a->y == t->ptr[i]->y)
                     a_foundMatch = true;
-                if (!b_foundMatch && b->x==t->ptr[i]->x && b->y==t->ptr[i]->y)
+                if (!b_foundMatch && b->x == t->ptr[i]->x && b->y == t->ptr[i]->y)
                     b_foundMatch = true;
-                if (!c_foundMatch && c->x==t->ptr[i]->x && c->y==t->ptr[i]->y)
+                if (!c_foundMatch && c->x == t->ptr[i]->x && c->y == t->ptr[i]->y)
                     c_foundMatch = true;
             }
 
             // check if there exists a common edge (i.e there exists two similar points)
-            if( (a_foundMatch && b_foundMatch) ||
+            if ((a_foundMatch && b_foundMatch) ||
                 (a_foundMatch && c_foundMatch) ||
-                (b_foundMatch && c_foundMatch) ) {
+                (b_foundMatch && c_foundMatch)) {
 
                 return &(*t);
             }
@@ -421,16 +445,16 @@ void flip(Triangle &ptr1, Triangle &ptr2) {
     Vector2D *R = ptr1.getNextVertex(P);
     Vector2D *S = ptr2.getNextVertex(Q);
 
-    ptr1.updateVertices(P,R,Q);
-    ptr2.updateVertices(Q,S,P);
+    ptr1.updateVertices(P, R, Q);
+    ptr2.updateVertices(Q, S, P);
 }
 
-void Field::onMouseMove(const Vector2D& pos) {
-    for (auto& triangle: tabTriangles) {
+void Field::onMouseMove(const Vector2D &pos) {
+    for (auto &triangle: tabTriangles) {
         triangle.onMouseMove(pos);
     }
 
-    for (auto& polygon: tabPolygons) {
+    for (auto &polygon: tabPolygons) {
         polygon->onMouseMove(pos);
     }
 
@@ -453,13 +477,13 @@ Vector2D intersectionWithBorders(Vector2D a, Vector2D u, float x0, float y0, flo
 
 //    std::cout << k0 << "," << k1 << "," << k2 << "," << k3 << std::endl;
 
-    std::vector<float> foo = {k0,k1,k2,k3};
+    std::vector<float> foo = {k0, k1, k2, k3};
     float min = std::numeric_limits<float>::max();
     Vector2D tryP;
     Vector2D P;
 
     for (auto k: foo) {
-        if(k > 0 && k < min)
+        if (k > 0 && k < min)
             min = k;
     }
     P = a + (min * u);
@@ -467,7 +491,7 @@ Vector2D intersectionWithBorders(Vector2D a, Vector2D u, float x0, float y0, flo
 }
 
 void Field::voronoiDiagram(int width, int height) {
-    Polygon* Pi;
+    Polygon *Pi;
     std::list<Triangle> triangleSubset;
 
     for (auto vertex: allPoints) {
@@ -485,7 +509,7 @@ void Field::voronoiDiagram(int width, int height) {
         bool isShared;
         bool isShared2;
         bool isOpened = false;
-        Vector2D Q1,Q2;
+        Vector2D Q1, Q2;
 
         for (auto triangle: triangleSubset) {
             isShared = false;
@@ -581,22 +605,22 @@ void Field::voronoiDiagram(int width, int height) {
 
         triangleSubset.remove(t);
 
-        if(isOpened){
+        if (isOpened) {
             if ((Q1.x == 0 && Q2.y == 0) ||
                 (Q2.x == 0 && Q1.y == 0))
-                Pi->addVector(Vector2D(0,0));
+                Pi->addVector(Vector2D(0, 0));
 
             if ((Q1.x == width && Q2.y == 0) ||
                 (Q2.x == width && Q1.y == 0))
-                Pi->addVector(Vector2D(width,0));
+                Pi->addVector(Vector2D(width, 0));
 
             if ((Q1.x == 0 && Q2.y == height) ||
                 (Q2.x == 0 && Q1.y == height))
-                    Pi->addVector(Vector2D(0,height));
+                Pi->addVector(Vector2D(0, height));
 
             if ((Q1.x == width && Q2.y == height) ||
                 (Q2.x == width && Q1.y == height))
-                Pi->addVector(Vector2D(width,height));
+                Pi->addVector(Vector2D(width, height));
 
             // special cases
 //            if ((Q1.x == 0 && Q2.x == width) ||
@@ -605,12 +629,12 @@ void Field::voronoiDiagram(int width, int height) {
 //                Pi->addVector(Vector2D(0, height));
 //            }
 
-            if ((Q1.x == 0 && Q2.x == width)){
+            if ((Q1.x == 0 && Q2.x == width)) {
                 Pi->addVector(Vector2D(width, height));
                 Pi->addVector(Vector2D(0, height));
             }
 
-            if ((Q2.x == 0 && Q1.x == width)){
+            if ((Q2.x == 0 && Q1.x == width)) {
                 Pi->addVector(Vector2D(0, 0));
                 Pi->addVector(Vector2D(width, 0));
             }
@@ -634,8 +658,8 @@ void Field::voronoiDiagram(int width, int height) {
         tabPolygons.push_back(Pi);
 
         // associate server with polygon
-        for(auto &s: servers) {
-            if(s.location->x == vertex->x && s.location->y == vertex->y) {
+        for (auto &s: servers) {
+            if (s.location->x == vertex->x && s.location->y == vertex->y) {
                 s.polygon = Pi;
                 if (s.color == "RED") {
                     Pi->setColor(RED);
@@ -647,62 +671,52 @@ void Field::voronoiDiagram(int width, int height) {
                     Pi->setSaveColor(ORANGE);
                     Pi->c = "ORANE";
                     Pi->saveC = "ORANGE";
-                }
-                else if (s.color == "YELLOW") {
+                } else if (s.color == "YELLOW") {
                     Pi->setColor(YELLOW);
                     Pi->setSaveColor(YELLOW);
                     Pi->c = "YELLOW";
                     Pi->saveC = "YELLOW";
-                }
-                else if (s.color == "GREEN") {
+                } else if (s.color == "GREEN") {
                     Pi->setColor(GREEN);
                     Pi->setSaveColor(GREEN);
                     Pi->c = "YELLOW";
                     Pi->saveC = "YELLOW";
-                }
-                else if (s.color == "CYAN") {
+                } else if (s.color == "CYAN") {
                     Pi->setColor(CYAN);
                     Pi->setSaveColor(CYAN);
                     Pi->c = "CYAN";
                     Pi->saveC = "CYAN";
-                }
-                else if (s.color == "BLUE") {
+                } else if (s.color == "BLUE") {
                     Pi->setColor(BLUE);
                     Pi->setSaveColor(BLUE);
                     Pi->c = "BLUE";
                     Pi->saveC = "BLUE";
-                }
-                else if (s.color == "PINK") {
+                } else if (s.color == "PINK") {
                     Pi->setColor(PINK);
                     Pi->setSaveColor(PINK);
                     Pi->c = "PINK";
                     Pi->saveC = "PINK";
-                }
-                else if (s.color == "PURPLE") {
+                } else if (s.color == "PURPLE") {
                     Pi->setColor(PURPLE);
                     Pi->setSaveColor(PURPLE);
                     Pi->c = "PURPLE";
                     Pi->saveC = "PURPLE";
-                }
-                else if (s.color == "MAGENTA") {
+                } else if (s.color == "MAGENTA") {
                     Pi->setColor(MAGENTA);
                     Pi->setSaveColor(MAGENTA);
                     Pi->c = "MAGENTA";
                     Pi->saveC = "MAGENTA";
-                }
-                else if (s.color == "GREY") {
+                } else if (s.color == "GREY") {
                     Pi->setColor(GREY);
                     Pi->setSaveColor(GREY);
                     Pi->c = "GREY";
                     Pi->saveC = "GREY";
-                }
-                else if (s.color == "BROWN") {
+                } else if (s.color == "BROWN") {
                     Pi->setColor(BROWN);
                     Pi->setSaveColor(BROWN);
                     Pi->c = "BROWN";
                     Pi->saveC = "BROWN";
-                }
-                else if (s.color == "WHITE") {
+                } else if (s.color == "WHITE") {
                     Pi->setColor(WHITE);
                     Pi->setSaveColor(WHITE);
                     Pi->c = "WHITE";
@@ -722,12 +736,12 @@ void Field::addDrone() {
     Drone *d = new Drone();
     float min = std::numeric_limits<float>::max();
     Server nearest;
-    for(auto s: servers) {
+    for (auto s: servers) {
         auto a = d->getPosition();
         auto b = s.location;
         auto ab = *b - a;
         auto abDistance = ab.norm();
-        if(abDistance < min){
+        if (abDistance < min) {
             min = abDistance;
             nearest = s;
         }
@@ -739,19 +753,19 @@ void Field::addDrone() {
 }
 
 void Field::makePolygonTriangles() {
-    for(auto& p: tabPolygons) {
+    for (auto &p: tabPolygons) {
         p->triangulation();
     }
 }
 
 void Field::calculatePolygonAreas() {
-    for(auto& p: tabPolygons) {
+    for (auto &p: tabPolygons) {
         p->calculateArea();
     }
 }
 
 void Field::updateDesired(float fieldArea) {
-    for(auto& p: tabPolygons) {
+    for (auto &p: tabPolygons) {
         int totalDrones = drones.size();
         p->updateDesired(fieldArea, totalDrones);
     }
@@ -761,8 +775,8 @@ void Field::transferDrone() {
     float max = -1;
     Server highestDesire;
     // send to best among neighbour
-    for(auto &s: servers) {
-        if(s.polygon->desiredDrones > max) {
+    for (auto &s: servers) {
+        if (s.polygon->desiredDrones > max) {
             max = s.polygon->desiredDrones;
             highestDesire = s;
         }
@@ -773,16 +787,15 @@ void Field::transferDrone() {
 }
 
 void Field::findSelected(double x, double y) {
-    for(auto &s: servers) {
-        if (s.polygon->isInside(Vector2D(x,y))) {
+    for (auto &s: servers) {
+        if (s.polygon->isInside(Vector2D(x, y))) {
             lastSelected = s;
             std::cout << s.city << std::endl;
             if (s.polygon->c == s.polygon->saveC) {
                 s.polygon->setColor(s.polygon->selectColor);
                 s.polygon->c = s.polygon->selectC;
                 lastSelected.polygon->c = s.polygon->selectC;
-            }
-            else {
+            } else {
                 s.polygon->setColor(s.polygon->saveColor);
                 s.polygon->c = s.polygon->saveC;
                 lastSelected.polygon->c = s.polygon->saveC;
