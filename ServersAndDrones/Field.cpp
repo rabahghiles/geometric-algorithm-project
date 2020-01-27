@@ -17,6 +17,7 @@ void flip(Triangle &ptr1, Triangle &ptr2);
 
 Field::Field(std::string filename) {
     file = filename;
+    lastSelected = Server();
 }
 
 void Field::addServers() {
@@ -581,17 +582,30 @@ void Field::voronoiDiagram(int width, int height) {
                 (Q2.x == 0 && Q1.y == 0))
                 Pi->addVector(Vector2D(0,0));
 
-            else if ((Q1.x == width && Q2.y == 0) ||
-                     (Q2.x == width && Q1.y == 0))
+            if ((Q1.x == width && Q2.y == 0) ||
+                (Q2.x == width && Q1.y == 0))
                 Pi->addVector(Vector2D(width,0));
 
-            else if ((Q1.x == 0 && Q2.y == height) ||
-                     (Q2.x == 0 && Q1.y == height))
+            if ((Q1.x == 0 && Q2.y == height) ||
+                (Q2.x == 0 && Q1.y == height))
                     Pi->addVector(Vector2D(0,height));
 
-            else if ((Q1.x == width && Q2.y == height) ||
-                     (Q2.x == width && Q1.y == height))
+            if ((Q1.x == width && Q2.y == height) ||
+                (Q2.x == width && Q1.y == height))
                 Pi->addVector(Vector2D(width,height));
+
+            // 2 very special cases
+            if ((Q1.x == 0 && Q2.x == width) ||
+                (Q2.x == 0 && Q1.x == width)){
+                Pi->addVector(Vector2D(width, height));
+                Pi->addVector(Vector2D(0, height));
+            }
+
+            if ((Q1.y == 0 && Q2.y == height) ||
+                (Q2.y == 0 && Q1.y == height)) {
+                Pi->addVector(Vector2D(width, 0));
+                Pi->addVector(Vector2D(width, height));
+            }
         }
 
         tabPolygons.push_back(Pi);
@@ -600,7 +614,30 @@ void Field::voronoiDiagram(int width, int height) {
         for(auto &s: servers) {
             if(s.location->x == vertex->x && s.location->y == vertex->y) {
                 s.polygon = Pi;
-//                Pi->setColor(s.color);
+                if (s.color == "RED")
+                    Pi->setColor(RED);
+                else if (s.color == "ORANGE")
+                    Pi->setColor(ORANGE);
+                else if (s.color == "YELLOW")
+                    Pi->setColor(YELLOW);
+                else if (s.color == "GREEN")
+                    Pi->setColor(GREEN);
+                else if (s.color == "CYAN")
+                    Pi->setColor(CYAN);
+                else if (s.color == "BLUE")
+                    Pi->setColor(BLUE);
+                else if (s.color == "PINK")
+                    Pi->setColor(PINK);
+                else if (s.color == "PURPLE")
+                    Pi->setColor(PURPLE);
+                else if (s.color == "MAGNETA")
+                    Pi->setColor(MAGENTA);
+                else if (s.color == "GREY")
+                    Pi->setColor(GREY);
+                else if (s.color == "BROWN")
+                    Pi->setColor(BROWN);
+                else if (s.color == "WHITE")
+                    Pi->setColor(WHITE);
                 break;
             }
         }
@@ -663,6 +700,21 @@ void Field::transferDrone() {
 
     highestDesire.polygon->currentDrones += 1;
     currentDrone->updateServer(&highestDesire);
+}
+
+void Field::findSelected(double x, double y) {
+    if (lastSelected.city != "none")
+        lastSelected.polygon->setColor(lastColor);
+
+    for(auto &s: servers) {
+        if (s.polygon->isInside(Vector2D(x,y))) {
+            lastSelected = s;
+            lastColor = s.polygon->color;
+            std::cout << s.city << std::endl;
+            s.polygon->setColor(WHITE);
+            break;
+        }
+    }
 }
 
 

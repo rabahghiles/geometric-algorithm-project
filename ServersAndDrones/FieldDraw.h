@@ -24,6 +24,8 @@ public:
     void onQuit() override;
     void onMouseMove(double cx,double cy) override;
     void onKeyPressed(unsigned char c,double x,double y) override;
+    void onMouseDown(int button,double x,double y) override;
+
 
 };
 

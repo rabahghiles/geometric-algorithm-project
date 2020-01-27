@@ -14,7 +14,6 @@
 class Polygon {
     std::vector<Triangle> polyTriangles;
     int Nmax;
-    float color[4];
 
 public:
     int N;
@@ -27,6 +26,8 @@ public:
 
     float currentDrones;
     float desiredDrones;
+
+    float color[4];
 
     bool addVector(const Vector2D &p);
     void draw();
@@ -59,6 +60,10 @@ public:
     bool isOnTheLeft(const Vector2D* p, const Vector2D* p1, const Vector2D* p2);
     float crossProduct(const Vector2D& u, const Vector2D& v);
     void setColor(const float *t_color);
+
+    bool isInsideRight(const Vector2D &p);
+    bool isInsideLeft(const Vector2D &p);
+    bool isOnTheRight(const Vector2D& p, int i);
 
 };
 

@@ -9,6 +9,8 @@ FieldDraw::FieldDraw(const string &title, int argc, char **argv, unsigned int wi
         : GlutWindow(argc, argv, title, width, height, FIXED){
     droneId=0;
     surfaceArea = width * height;
+    Server* selectedServer;
+    Polygon* selectedPolygon;
 }
 
 void FieldDraw::onStart() {
@@ -64,4 +66,11 @@ void FieldDraw::onMouseMove(double cx, double cy) {
 //    }
 
     field->onMouseMove(vertex);
+}
+
+void FieldDraw::onMouseDown(int button, double x, double y) {
+    if (button = GLUT_RIGHT_BUTTON) {
+        std::cout << "hello world" << std::endl;
+        field->findSelected(x,y);
+    }
 }

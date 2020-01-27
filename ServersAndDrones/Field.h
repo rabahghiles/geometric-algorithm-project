@@ -35,6 +35,9 @@ public:
 
     std::vector<Server> servers;
 
+    float *lastColor;
+    Server lastSelected;
+
     void addServers();
     void seeServers();
     void convexHull();
@@ -52,6 +55,7 @@ public:
     void calculatePolygonAreas();
     void updateDesired(float fieldArea);
     void transferDrone();
+    void findSelected(double x, double y);
 
     static bool polarComparison(Vector2D P1, Vector2D P2);
     bool isOnTheLeft(const Vector2D* p, const Vector2D* p1, const Vector2D* p2);

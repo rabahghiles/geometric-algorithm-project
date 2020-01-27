@@ -6,7 +6,7 @@
 #include "Polygon.h"
 
 Polygon::Polygon(int p_max) : tabPts{new Vector2D[p_max]}, Nmax{p_max}, N{0} {
-    setColor(YELLOW);
+    setColor(WHITE);
     surfaceArea = 0;
     currentDrones = 0;
     desiredDrones = 0;
@@ -35,7 +35,7 @@ float Polygon::crossProduct(const Vector2D& u, const Vector2D& v) {
 void Polygon::draw() {
 
     // Draw the interior of the polygon.
-    glColor3fv(YELLOW);
+    glColor3fv(color);
 //    glBegin(GL_POLYGON);
 //    for (int i = 0; i < N; i++) {
 //        glVertex2f(tabPts[i].x, tabPts[i].y);
@@ -144,23 +144,62 @@ void Polygon::updateDesired(float fieldArea, int totalDrones) {
     std::cout << std::endl;
 }
 
+//bool Polygon::isInside(const Vector2D &p) {
+//    int i = 0;
+//    while (i<N && isOnTheLeft(p,i)) {
+//        i++;
+//    }
+//    std::cout << "i: " << i << " N:" << N << std::endl;
+//    return i == N;
+//}
+//
+//bool Polygon::isOnTheLeft(const Vector2D &p, int i) {
+//    Vector2D u = tabPts[i+1] - tabPts[i],
+//            v = p - tabPts[i];
+//    return crossProduct(u,v) >= 0;
+//}
+//
+//bool Polygon::isOnTheLeft(const Vector2D *p, const Vector2D *p1, const Vector2D *p2) {
+//    Vector2D AB = *p2 - *p1,
+//            AP = *p - *p1;
+//    return crossProduct(AB,AP) >= 0;
+//}
+
 bool Polygon::isInside(const Vector2D &p) {
+
+    return isInsideLeft(p) || isInsideRight(p);
+}
+
+bool Polygon::isInsideLeft(const Vector2D &p) {
     int i = 0;
-    while (i<N && isOnTheLeft(p,i)) {
+    while (i < N && isOnTheLeft(p, i)) {
         i++;
     }
-    std::cout << "i: " << i << " N:" << N << std::endl;
+//    cout << " * " << endl;
+//    std::cout << "i: " << i << " N:" << N << std::endl;
+    return i == N;
+}
+
+bool Polygon::isInsideRight(const Vector2D &p) {
+    int i = 0;
+    while (i < N && isOnTheRight(p, i)) {
+        i++;
+    }
+//    cout << " * " << endl;
+//    std::cout << "i: " << i << " N:" << N << std::endl;
     return i == N;
 }
 
 bool Polygon::isOnTheLeft(const Vector2D &p, int i) {
-    Vector2D u = tabPts[i+1] - tabPts[i],
+    Vector2D u = tabPts[i + 1] - tabPts[i],
             v = p - tabPts[i];
-    return crossProduct(u,v) >= 0;
+
+    return crossProduct(u, v) >= 0;
 }
 
-bool Polygon::isOnTheLeft(const Vector2D *p, const Vector2D *p1, const Vector2D *p2) {
-    Vector2D AB = *p2 - *p1,
-            AP = *p - *p1;
-    return crossProduct(AB,AP) >= 0;
+bool Polygon::isOnTheRight(const Vector2D &p, int i) {
+    Vector2D u = tabPts[i + 1] - tabPts[i],
+            v = p - tabPts[i];
+
+    return crossProduct(u, v) <= 0;
 }

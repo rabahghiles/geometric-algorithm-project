@@ -8,138 +8,132 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug"/>
+				<Option working_dir="/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug"/>
+				<Option working_dir="/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="ServersAndDrones">
-				<Option output="/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/ServersAndDrones" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add option="-DUSE_FREEGLUT"/>
-					<Add directory="/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/../../glutInterface"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 ServersAndDrones"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="ServersAndDrones/fast">
-				<Option output="/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/ServersAndDrones" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add option="-DUSE_FREEGLUT"/>
-					<Add directory="/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/../../glutInterface"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 ServersAndDrones/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug"/>
+				<Option working_dir="/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ServersAndDrones">
+				<Option output="/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/ServersAndDrones" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/kwabena/CLionProjects/ServersAndDrones/../glutInterface"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 ServersAndDrones"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ServersAndDrones/fast">
+				<Option output="/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/ServersAndDrones" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/kwabena/CLionProjects/ServersAndDrones/../glutInterface"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 ServersAndDrones/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/kwabena/CLionProjects/ServersAndDrones/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Drone.cpp">
+		<Unit filename="/Users/kwabena/CLionProjects/ServersAndDrones/Drone.cpp">
 			<Option target="ServersAndDrones"/>
 		</Unit>
-		<Unit filename="/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Drone.h">
+		<Unit filename="/Users/kwabena/CLionProjects/ServersAndDrones/Drone.h">
 			<Option target="ServersAndDrones"/>
 		</Unit>
-		<Unit filename="/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Field.cpp">
+		<Unit filename="/Users/kwabena/CLionProjects/ServersAndDrones/Field.cpp">
 			<Option target="ServersAndDrones"/>
 		</Unit>
-		<Unit filename="/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Field.h">
+		<Unit filename="/Users/kwabena/CLionProjects/ServersAndDrones/Field.h">
 			<Option target="ServersAndDrones"/>
 		</Unit>
-		<Unit filename="/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/FieldDraw.cpp">
+		<Unit filename="/Users/kwabena/CLionProjects/ServersAndDrones/FieldDraw.cpp">
 			<Option target="ServersAndDrones"/>
 		</Unit>
-		<Unit filename="/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/FieldDraw.h">
+		<Unit filename="/Users/kwabena/CLionProjects/ServersAndDrones/FieldDraw.h">
 			<Option target="ServersAndDrones"/>
 		</Unit>
-		<Unit filename="/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Polygon.cpp">
+		<Unit filename="/Users/kwabena/CLionProjects/ServersAndDrones/Polygon.cpp">
 			<Option target="ServersAndDrones"/>
 		</Unit>
-		<Unit filename="/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Polygon.h">
+		<Unit filename="/Users/kwabena/CLionProjects/ServersAndDrones/Polygon.h">
 			<Option target="ServersAndDrones"/>
 		</Unit>
-		<Unit filename="/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Server.cpp">
+		<Unit filename="/Users/kwabena/CLionProjects/ServersAndDrones/Server.cpp">
 			<Option target="ServersAndDrones"/>
 		</Unit>
-		<Unit filename="/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Server.h">
+		<Unit filename="/Users/kwabena/CLionProjects/ServersAndDrones/Server.h">
 			<Option target="ServersAndDrones"/>
 		</Unit>
-		<Unit filename="/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Triangle.cpp">
+		<Unit filename="/Users/kwabena/CLionProjects/ServersAndDrones/Triangle.cpp">
 			<Option target="ServersAndDrones"/>
 		</Unit>
-		<Unit filename="/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Triangle.h">
+		<Unit filename="/Users/kwabena/CLionProjects/ServersAndDrones/Triangle.h">
 			<Option target="ServersAndDrones"/>
 		</Unit>
-		<Unit filename="/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Vector2D.cpp">
+		<Unit filename="/Users/kwabena/CLionProjects/ServersAndDrones/Vector2D.cpp">
 			<Option target="ServersAndDrones"/>
 		</Unit>
-		<Unit filename="/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Vector2D.h">
+		<Unit filename="/Users/kwabena/CLionProjects/ServersAndDrones/Vector2D.h">
 			<Option target="ServersAndDrones"/>
 		</Unit>
-		<Unit filename="/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/determinant.cpp">
+		<Unit filename="/Users/kwabena/CLionProjects/ServersAndDrones/determinant.cpp">
 			<Option target="ServersAndDrones"/>
 		</Unit>
-		<Unit filename="/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/determinant.h">
+		<Unit filename="/Users/kwabena/CLionProjects/ServersAndDrones/determinant.h">
 			<Option target="ServersAndDrones"/>
 		</Unit>
-		<Unit filename="/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/main.cpp">
+		<Unit filename="/Users/kwabena/CLionProjects/ServersAndDrones/main.cpp">
 			<Option target="ServersAndDrones"/>
 		</Unit>
-		<Unit filename="/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/CMakeLists.txt">
+		<Unit filename="/Users/kwabena/CLionProjects/ServersAndDrones/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

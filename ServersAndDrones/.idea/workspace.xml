@@ -21,6 +21,7 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/Drone.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/Drone.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/ServersAndDrones" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ServersAndDrones" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,7 +39,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../circumscribe 2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -52,6 +53,18 @@
       <recent name="$PROJECT_DIR$/Images" />
       <recent name="$PROJECT_DIR$" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="ServersAndDrones" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ServersAndDrones" TARGET_NAME="ServersAndDrones" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ServersAndDrones" RUN_TARGET_NAME="ServersAndDrones">
@@ -79,6 +92,7 @@
       <workItem from="1579214518856" duration="72802000" />
       <workItem from="1579560957347" duration="8211000" />
       <workItem from="1579766811392" duration="91615000" />
+      <workItem from="1580055324779" duration="18166000" />
     </task>
     <servers />
   </component>

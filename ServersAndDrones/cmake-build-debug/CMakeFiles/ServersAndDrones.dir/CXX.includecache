@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-../../../glutInterface/glutWindow.h
+../../glutInterface/glutWindow.h
 iostream
 -
 string
@@ -20,11 +20,7 @@ GL/freeglut.h
 GLUT/glut.h
 -
 
-/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Drone.cpp
-Drone.h
-/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Drone.h
-
-/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Drone.h
+/Users/kwabena/CLionProjects/ServersAndDrones/Drone.h
 iostream
 -
 string
@@ -36,17 +32,59 @@ vector
 vector
 -
 Server.h
-/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Server.h
+/Users/kwabena/CLionProjects/ServersAndDrones/Server.h
 
-/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Polygon.h
+/Users/kwabena/CLionProjects/ServersAndDrones/Field.cpp
+iostream
+-
+fstream
+-
+sstream
+-
+algorithm
+-
+limits
+-
+glutWindow.h
+-
+stack
+-
+Field.h
+/Users/kwabena/CLionProjects/ServersAndDrones/Field.h
+
+/Users/kwabena/CLionProjects/ServersAndDrones/Field.h
+Server.h
+/Users/kwabena/CLionProjects/ServersAndDrones/Server.h
+Triangle.h
+/Users/kwabena/CLionProjects/ServersAndDrones/Triangle.h
+Polygon.h
+/Users/kwabena/CLionProjects/ServersAndDrones/Polygon.h
+Drone.h
+/Users/kwabena/CLionProjects/ServersAndDrones/Drone.h
+list
+-
+vector
+-
+
+/Users/kwabena/CLionProjects/ServersAndDrones/FieldDraw.cpp
+FieldDraw.h
+/Users/kwabena/CLionProjects/ServersAndDrones/FieldDraw.h
+
+/Users/kwabena/CLionProjects/ServersAndDrones/FieldDraw.h
+glutWindow.h
+-
+Field.h
+/Users/kwabena/CLionProjects/ServersAndDrones/Field.h
+
+/Users/kwabena/CLionProjects/ServersAndDrones/Polygon.h
 glutWindow.h
 -
 Vector2D.h
-/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Vector2D.h
+/Users/kwabena/CLionProjects/ServersAndDrones/Vector2D.h
 Triangle.h
-/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Triangle.h
+/Users/kwabena/CLionProjects/ServersAndDrones/Triangle.h
 
-/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Server.h
+/Users/kwabena/CLionProjects/ServersAndDrones/Server.h
 iostream
 -
 string
@@ -54,23 +92,29 @@ string
 sstream
 -
 Vector2D.h
-/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Vector2D.h
+/Users/kwabena/CLionProjects/ServersAndDrones/Vector2D.h
 Polygon.h
-/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Polygon.h
+/Users/kwabena/CLionProjects/ServersAndDrones/Polygon.h
 
-/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Triangle.h
+/Users/kwabena/CLionProjects/ServersAndDrones/Triangle.h
 Vector2D.h
-/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Vector2D.h
+/Users/kwabena/CLionProjects/ServersAndDrones/Vector2D.h
 determinant.h
-/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/determinant.h
+/Users/kwabena/CLionProjects/ServersAndDrones/determinant.h
 vector
 -
 list
 -
 
-/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/Vector2D.h
+/Users/kwabena/CLionProjects/ServersAndDrones/Vector2D.h
 cmath
 -
 
-/home/gadegbe/CLionProjects/geometric-algorithm-project/ServersAndDrones/determinant.h
+/Users/kwabena/CLionProjects/ServersAndDrones/determinant.h
+
+/Users/kwabena/CLionProjects/ServersAndDrones/main.cpp
+iostream
+-
+FieldDraw.h
+/Users/kwabena/CLionProjects/ServersAndDrones/FieldDraw.h
 
