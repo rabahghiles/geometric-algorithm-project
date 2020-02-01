@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="ServersAndDrones" targetName="ServersAndDrones" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8c202d8f-0862-4ead-91cf-bb01255d021e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Images/drone100x100.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/drone50x50.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/dronesecond100x100.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/server512x512.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/wireless100x100.tga" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/Drone.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ServersAndDrones.dir/Drone.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/ServersAndDrones" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ServersAndDrones" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
+  <component name="ProjectId" id="1VZ4m7pEI2m6G6s0Yq3svyzIP42" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HashTable" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Images" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="ServersAndDrones" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ServersAndDrones" TARGET_NAME="ServersAndDrones" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ServersAndDrones" RUN_TARGET_NAME="ServersAndDrones">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8c202d8f-0862-4ead-91cf-bb01255d021e" name="Default Changelist" comment="" />
+      <created>1577447438051</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1577447438051</updated>
+      <workItem from="1577447439459" duration="3700000" />
+      <workItem from="1577451361079" duration="14916000" />
+      <workItem from="1577473849027" duration="1275000" />
+      <workItem from="1577480075585" duration="37198000" />
+      <workItem from="1578785791852" duration="1143000" />
+      <workItem from="1578787230400" duration="23729000" />
+      <workItem from="1579214518856" duration="72802000" />
+      <workItem from="1579560957347" duration="8211000" />
+      <workItem from="1579766811392" duration="91615000" />
+      <workItem from="1580055324779" duration="29148000" />
+      <workItem from="1580129666647" duration="5388000" />
+      <workItem from="1580461108139" duration="19720000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="492" y="117" key="CommitChangelistDialog2" timestamp="1580051370043">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="492" y="117" key="CommitChangelistDialog2/0.0.1920.1044@0.0.1920.1044" timestamp="1580051370043" />
+    <state width="1874" height="271" key="GridCell.Tab.0.bottom" timestamp="1580051167911">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="1874" height="271" key="GridCell.Tab.0.bottom/0.0.1920.1044@0.0.1920.1044" timestamp="1580051167911" />
+    <state width="1874" height="271" key="GridCell.Tab.0.center" timestamp="1580051167910">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="1874" height="271" key="GridCell.Tab.0.center/0.0.1920.1044@0.0.1920.1044" timestamp="1580051167910" />
+    <state width="1874" height="271" key="GridCell.Tab.0.left" timestamp="1580051167910">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="1874" height="271" key="GridCell.Tab.0.left/0.0.1920.1044@0.0.1920.1044" timestamp="1580051167910" />
+    <state width="1874" height="271" key="GridCell.Tab.0.right" timestamp="1580051167911">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="1874" height="271" key="GridCell.Tab.0.right/0.0.1920.1044@0.0.1920.1044" timestamp="1580051167911" />
+    <state x="410" y="340" width="1520" height="704" key="dock-window-1" timestamp="1580050549927">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="410" y="340" width="1520" height="704" key="dock-window-1/0.0.1920.1044@0.0.1920.1044" timestamp="1580050549927" />
+  </component>
+</project>
