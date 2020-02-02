@@ -10,11 +10,33 @@ FieldDraw::FieldDraw(const string &title, int argc, char **argv, unsigned int wi
     droneId=0;
     surfaceArea = width * height;
     firstTime = true;
+    filename = "servers.txt";
+    for (int i = 0; i < argc; ++i) {
+        if (std::string(argv[i]) == "-c") {
+            filename = std::string(argv[i+1]);
+        }
+        if (std::string(argv[i]) == "-h") {
+            std::cout << "Help Text:" << std::endl;
+            std::cout << "Press the key 'z' on program run to display Voronoi diagram for set of servers" << std::endl;
+            std::cout << "Press the key 'd' to add drones to the field" << std::endl;
+            std::cout << "To select a server region, left click on the icon of the server" << std::endl;
+            std::cout << "To deselect a server region, left click anywhere outside the icon" << std::endl;
+            std::cout << "To change the colour of a server region, select the server, "
+                         "and the press any of these keys: <1> <2> <3> <4> <5> <6> <7> <8> <9> "
+                         "<0> <->" << std::endl;
+            std::cout << "To delete a server, select the server and then press the [Del] button" << std::endl;
+            std::cout << "To add a server, right click in the window where you wish to place the server. "
+                         "Then set the other data in the console window" << std::endl;
+            std::cout << "Considering a set of servers, you can create (or update) and show the background "
+                         "of the areas by pressing the key 'z'" << std::endl;
+            std::cout << "Press the key 's' to save and update the current configuration file" << std::endl;
+        }
+    }
 }
 
 void FieldDraw::onStart() {
     std::cout << "Start.." << std::endl;
-    field = new Field();
+    field = new Field(filename);
     field->addServers();
 //    field->seeServers();
     field->convexHull();

@@ -23,7 +23,7 @@ class Field {
 public:
     std::vector<Vector2D*> allPoints;
     std::list<Triangle> tabTriangles;
-    Field(std::string filename = "servers.txt");
+    Field(std::string filename);
     std::list<Server> servers;
     Server lastSelected;
 

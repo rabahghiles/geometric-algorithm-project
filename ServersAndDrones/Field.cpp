@@ -588,12 +588,6 @@ void Field::voronoiDiagram(int width, int height) {
                 Pi->addVector(Vector2D(width, height));
 
             // SPECIAL CASES
-//            if ((Q1.x == 0 && Q2.x == width) ||
-//                (Q2.x == 0 && Q1.x == width)){
-//                Pi->addVector(Vector2D(width, height));
-//                Pi->addVector(Vector2D(0, height));
-//            }
-
             if ((Q1.x == 0 && Q2.x == width)) {
                 Pi->addVector(Vector2D(width, height));
                 Pi->addVector(Vector2D(0, height));
@@ -604,11 +598,6 @@ void Field::voronoiDiagram(int width, int height) {
                 Pi->addVector(Vector2D(width, 0));
             }
 
-//            if ((Q1.y == 0 && Q2.y == height) ||
-//                (Q2.y == 0 && Q1.y == height)) {
-//                Pi->addVector(Vector2D(width, 0));
-//                Pi->addVector(Vector2D(width, height));
-//            }
             if ((Q2.y == 0 && Q1.y == height)) {
                 Pi->addVector(Vector2D(width, 0));
                 Pi->addVector(Vector2D(width, width));
@@ -746,7 +735,6 @@ void Field::findSelected(double x, double y) {
     if (!selection)
         lastSelected = Server();
 
-//    std::cout << lastSelected.city << std::endl;
 }
 
 
